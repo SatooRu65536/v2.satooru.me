@@ -1,0 +1,24 @@
+$primary-color: #000;
+$accent-color: #048dff;
+$font-color: #000;
+$background-color: #fff;
+$background-dark-color: #d9d9d9;
+
+$fontsize-xs: 12px;
+$fontsize-sm: 14px;
+$fontsize-md: 16px;
+$fontsize-lg: 18px;
+$fontsize-xl: 20px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: $font-color;
+  background-color: $background-color;
+  background-image: radial-gradient($background-dark-color 1px, transparent 3px);
+  background-size: 30px 30px;
+}
