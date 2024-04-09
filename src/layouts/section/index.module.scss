@@ -1,0 +1,46 @@
+.section {
+  margin-inline: auto;
+  padding: 40px;
+  width: 100%;
+  max-width: 900px;
+
+  .title {
+    h1 {
+      font-size: var.$fontsize-xl;
+    }
+
+    &[data-underline='true'] {
+      width: fit-content;
+      position: relative;
+
+      &::after {
+        content: '';
+        border-bottom: 1px solid var.$primary-color;
+        position: absolute;
+        left: 0;
+        right: -70px;
+        bottom: 0;
+      }
+    }
+  }
+
+  .content {
+    margin: 20px 0;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+    &[data-align='left'] {
+      text-align: left;
+      justify-content: left;
+    }
+    &[data-align='right'] {
+      text-align: right;
+      justify-content: right;
+    }
+    &[data-align='center'] {
+      text-align: center;
+      justify-content: center;
+    }
+  }
+}
