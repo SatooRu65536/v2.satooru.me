@@ -1823,6 +1823,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@icons-pack/react-simple-icons@npm:^9.4.0":
+  version: 9.4.0
+  resolution: "@icons-pack/react-simple-icons@npm:9.4.0"
+  peerDependencies:
+    react: ^16.13 || ^17 || ^18
+  checksum: 10c0/7466b56c989d82502a378af8311e3ce1380eff88a9b5b4e6839b3088681037d6f0e213b86841219033ec4422c327cb1fc955e61df5285dc3b0148cf2700ecc58
+  languageName: node
+  linkType: hard
+
 "@isaacs/cliui@npm:^8.0.2":
   version: 8.0.2
   resolution: "@isaacs/cliui@npm:8.0.2"
@@ -10817,6 +10826,7 @@ __metadata:
   resolution: "nextjs-template@workspace:."
   dependencies:
     "@chromatic-com/storybook": "npm:^1.2.26"
+    "@icons-pack/react-simple-icons": "npm:^9.4.0"
     "@storybook/addon-essentials": "npm:^8.0.5"
     "@storybook/addon-interactions": "npm:^8.0.5"
     "@storybook/addon-links": "npm:^8.0.5"
