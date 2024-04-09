@@ -4,7 +4,7 @@ import styles from './index.module.scss';
 
 interface Props {
   children: ReactNode;
-  title: string | ReactElement;
+  title?: string | ReactElement;
   align?: 'left' | 'center' | 'right';
   underline?: boolean;
 }

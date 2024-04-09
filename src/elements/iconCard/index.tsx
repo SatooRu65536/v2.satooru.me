@@ -23,6 +23,7 @@ import scss from './icons/scss';
 import storybook from './icons/storybook';
 import svelte from './icons/svelte';
 import typescript from './icons/typescript';
+import x from './icons/x';
 import styles from './index.module.scss';
 
 const Icons = {
@@ -49,6 +50,7 @@ const Icons = {
   storybook,
   svelte,
   typescript,
+  x,
 } as const;
 
 export type IconName = keyof typeof Icons;

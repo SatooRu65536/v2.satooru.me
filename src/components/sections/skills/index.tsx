@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 
 import styles from './index.module.scss';
 
-import Icon, { IconName } from '@/elements/icon';
+import Icon, { IconName } from '@/elements/iconCard';
 import SectionLayout from '@/layouts/section';
 
 const SKILLS: IconName[] = [
