@@ -5,7 +5,6 @@ import styles from './index.module.scss';
 import Footer from '@/components/base/footer';
 import Header from '@/components/base/header';
 
-
 interface Props {
   children: ReactNode;
 }

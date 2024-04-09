@@ -2,8 +2,8 @@ import { ReactElement } from 'react';
 
 import aftereffects from './icons/aftereffects';
 import c from './icons/c';
-import css from './icons/css';
 import cloudflare from './icons/cloudflare';
+import css from './icons/css';
 import firebase from './icons/firebase';
 import github from './icons/github';
 import hono from './icons/hono';
