@@ -19,24 +19,3 @@ a {
   color: var.$accent-color;
   text-decoration: none;
 }
-
-$mb: 767px;
-@mixin mobile {
-  @media (max-width: $mb) {
-    @content;
-  }
-}
-
-$tb: 1023px;
-@mixin tablet {
-  @media (max-width: $tb) {
-    @content;
-  }
-}
-
-$pc: 1024px;
-@mixin pc {
-  @media (min-width: $pc) {
-    @content;
-  }
-}
