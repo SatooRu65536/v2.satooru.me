@@ -1,7 +1,30 @@
 .header {
-  height: 44px;
+  height: 70px;
+  padding-inline: 40px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
+
+  .icon {
+    height: 40px;
+  }
+
+  .title {
+    font-size: var.$fontsize-lg;
+    font-weight: normal;
+  }
+
+  .nav {
+    margin-left: 20px;
+    display: flex;
+    gap: 10px;
+
+    .link {
+      color: var.$font-color;
+    }
+  }
 }

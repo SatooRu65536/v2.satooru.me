@@ -1,0 +1,42 @@
+:root {
+  font-size: 17px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var.$font-color;
+  background-color: var.$background-color;
+  background-image: radial-gradient(var.$background-dark-color 1px, transparent 3px);
+  background-size: 30px 30px;
+}
+
+a {
+  color: var.$accent-color;
+  text-decoration: none;
+}
+
+$mb: 767px;
+@mixin mobile {
+  @media (max-width: $mb) {
+    @content;
+  }
+}
+
+$tb: 1023px;
+@mixin tablet {
+  @media (max-width: $tb) {
+    @content;
+  }
+}
+
+$pc: 1024px;
+@mixin pc {
+  @media (min-width: $pc) {
+    @content;
+  }
+}

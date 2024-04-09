@@ -49,5 +49,6 @@ module.exports = {
     ],
     // export をカプセル化
     'import-access/jsdoc': ['error'],
+    '@next/next/no-img-element': 'off',
   },
 };
