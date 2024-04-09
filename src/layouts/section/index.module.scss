@@ -29,15 +29,12 @@
 
     &[data-align='left'] {
       text-align: left;
-      justify-content: left;
     }
     &[data-align='right'] {
-      text-align: right;
-      justify-content: right;
+      margin-inline: auto 20px;
     }
     &[data-align='center'] {
       text-align: center;
-      justify-content: center;
     }
   }
 }
