@@ -5517,6 +5517,7 @@ __metadata:
   linkType: hard
 
 "chokidar@npm:>=3.0.0 <4.0.0, chokidar@npm:^3.5.3, chokidar@npm:^3.6.0":
+"chokidar@npm:>=3.0.0 <4.0.0, chokidar@npm:^3.5.3, chokidar@npm:^3.6.0":
   version: 3.6.0
   resolution: "chokidar@npm:3.6.0"
   dependencies:
@@ -8708,6 +8709,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"immutable@npm:^4.0.0":
+  version: 4.3.5
+  resolution: "immutable@npm:4.3.5"
+  checksum: 10c0/63d2d7908241a955d18c7822fd2215b6e89ff5a1a33cc72cd475b013cbbdef7a705aa5170a51ce9f84a57f62fdddfaa34e7b5a14b33d8a43c65cc6a881d6e894
+  languageName: node
+  linkType: hard
+
 "import-fresh@npm:^3.2.1, import-fresh@npm:^3.3.0":
   version: 3.3.0
   resolution: "import-fresh@npm:3.3.0"
@@ -10846,7 +10854,10 @@ __metadata:
     react: "npm:^18"
     react-dom: "npm:^18"
     sass: "npm:^1.74.1"
+    sass-loader: "npm:^14.1.1"
     storybook: "npm:^8.0.5"
+    style-loader: "npm:^4.0.0"
+    tsconfig-paths-webpack-plugin: "npm:^4.1.0"
     typescript: "npm:^5.4.3"
   languageName: unknown
   linkType: soft
@@ -12703,6 +12714,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"sass-loader@npm:^14.1.1":
+  version: 14.1.1
+  resolution: "sass-loader@npm:14.1.1"
+  dependencies:
+    neo-async: "npm:^2.6.2"
+  peerDependencies:
+    "@rspack/core": 0.x || 1.x
+    node-sass: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
+    sass: ^1.3.0
+    sass-embedded: "*"
+    webpack: ^5.0.0
+  peerDependenciesMeta:
+    "@rspack/core":
+      optional: true
+    node-sass:
+      optional: true
+    sass:
+      optional: true
+    sass-embedded:
+      optional: true
+    webpack:
+      optional: true
+  checksum: 10c0/303ae65c38019723c1d534d6c70ba051b2744ea52c9e07c1c761303962540e8f3147bd73ff0ce2767c7435bc76f544f5cbc5db03617689f30ec9ffb26494289d
+  languageName: node
+  linkType: hard
+
 "sass@npm:^1.74.1":
   version: 1.74.1
   resolution: "sass@npm:1.74.1"
@@ -13037,6 +13074,7 @@ __metadata:
   languageName: node
   linkType: hard
 
+"source-map-js@npm:>=0.6.2 <2.0.0, source-map-js@npm:^1.0.2, source-map-js@npm:^1.2.0":
 "source-map-js@npm:>=0.6.2 <2.0.0, source-map-js@npm:^1.0.2, source-map-js@npm:^1.2.0":
   version: 1.2.0
   resolution: "source-map-js@npm:1.2.0"
@@ -13452,6 +13490,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"style-loader@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "style-loader@npm:4.0.0"
+  peerDependencies:
+    webpack: ^5.27.0
+  checksum: 10c0/214bc0f3b018f8c374f79b9fa16da43df78c7fef2261e9a99e36c2f8387601fad10ac75a171aa8edba75903db214bc46952ae08b94a1f8544bd146c2c8d07d27
+  languageName: node
+  linkType: hard
+
 "styled-jsx@npm:5.1.1":
   version: 5.1.1
   resolution: "styled-jsx@npm:5.1.1"
@@ -13799,7 +13846,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsconfig-paths-webpack-plugin@npm:^4.0.1":
+"tsconfig-paths-webpack-plugin@npm:^4.0.1, tsconfig-paths-webpack-plugin@npm:^4.1.0":
   version: 4.1.0
   resolution: "tsconfig-paths-webpack-plugin@npm:4.1.0"
   dependencies:
