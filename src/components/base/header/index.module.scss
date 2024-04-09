@@ -8,6 +8,9 @@
   top: 0;
   left: 0;
   right: 0;
+  background-color: rgba($color: var.$background-color, $alpha: 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 1000;
 
   .icon {
     height: 40px;
