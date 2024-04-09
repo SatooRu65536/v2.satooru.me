@@ -8,7 +8,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba($color: var.$background-color, $alpha: 0.5);
+  background-color: rgba($color: $background-color, $alpha: 0.5);
   backdrop-filter: blur(2px);
   z-index: 1000;
 
@@ -21,11 +21,11 @@
   }
 
   .title {
-    font-size: var.$fontsize-lg;
+    font-size: $fontsize-lg;
     font-weight: normal;
 
     @include mobile {
-      font-size: var.$fontsize-md;
+      font-size: $fontsize-md;
     }
   }
 
@@ -35,7 +35,7 @@
     gap: 10px;
 
     .link {
-      color: var.$font-color;
+      color: $font-color;
     }
   }
 }
