@@ -1,3 +1,12 @@
 .footer {
   height: 44px;
+  text-align: center;
+
+  p {
+    padding-bottom: 5px;
+    max-width: 100%;
+    width: 400px;
+    display: inline-block;
+    border-bottom: solid 2px var.$font-color;
+  }
 }
