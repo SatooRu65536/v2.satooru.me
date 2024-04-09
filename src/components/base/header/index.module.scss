@@ -12,6 +12,10 @@
   backdrop-filter: blur(2px);
   z-index: 1000;
 
+  @include mobile {
+    padding-inline: 20px;
+  }
+
   .icon {
     height: 40px;
   }
@@ -19,6 +23,10 @@
   .title {
     font-size: var.$fontsize-lg;
     font-weight: normal;
+
+    @include mobile {
+      font-size: var.$fontsize-md;
+    }
   }
 
   .nav {
