@@ -9,14 +9,14 @@ const LinksSection = (): ReactElement => {
     <section className={styles.links}>
       <div>
         <p>
-          <a href="https://x.com/SatooRu65536">
+          <a href="https://x.com/SatooRu65536" target="_blank">
             <Icon iconKey="x" className={styles.icon} />
             <span>@SatooRu65536</span>
           </a>
         </p>
 
         <p>
-          <a href="http://github.com/SatooRu65536/">
+          <a href="http://github.com/SatooRu65536/" target="_blank">
             <Icon iconKey="github" className={styles.icon} />
             <span>@SatooRu65536</span>
           </a>
