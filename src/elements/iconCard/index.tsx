@@ -1,80 +1,24 @@
 import { ReactElement } from 'react';
 
-import aftereffects from './icons/aftereffects';
-import c from './icons/c';
-import cloudflare from './icons/cloudflare';
-import css from './icons/css';
-import firebase from './icons/firebase';
-import github from './icons/github';
-import hono from './icons/hono';
-import html from './icons/html';
-import illustrator from './icons/illustrator';
-import javascript from './icons/javascript';
-import mysql from './icons/mysql';
-import nestjs from './icons/nestjs';
-import nextjs from './icons/nextjs';
-import nodejs from './icons/nodejs';
-import prisma from './icons/prisma';
-import python from './icons/python';
-import rails from './icons/rails';
-import raspberrypi from './icons/raspberrypi';
-import react from './icons/react';
-import scss from './icons/scss';
-import storybook from './icons/storybook';
-import svelte from './icons/svelte';
-import typescript from './icons/typescript';
-import x from './icons/x';
 import styles from './index.module.scss';
 
-const Icons = {
-  aftereffects,
-  c,
-  css,
-  cloudflare,
-  firebase,
-  github,
-  hono,
-  html,
-  illustrator,
-  javascript,
-  mysql,
-  nestjs,
-  nextjs,
-  nodejs,
-  prisma,
-  python,
-  rails,
-  raspberrypi,
-  react,
-  scss,
-  storybook,
-  svelte,
-  typescript,
-  x,
-} as const;
-
-export type IconName = keyof typeof Icons;
+import Icon, { IconKey, IconMap } from '@/elements/icon';
 
 interface Props {
-  name: keyof typeof Icons;
-  size?: 'sm' | 'lg';
-  color?: string;
+  iconKey: IconKey;
+  size: 'sm' | 'lg';
 }
 
-const Icon = (props: Props): ReactElement => {
-  const { name, size, color } = props;
-  const SelectedIcon = Icons[name].icon;
-  const selectedIconName = Icons[name].name;
-
-  const iconSize = size === 'lg' ? 48 : 24;
-  const iconColor = color ?? 'default';
+const IconCard = (props: Props): ReactElement => {
+  const { iconKey, size } = props;
+  const IconSize = size === 'lg' ? 48 : 24;
 
   return (
     <div className={styles.icon}>
-      <SelectedIcon size={iconSize} color={iconColor} />
-      <p>{selectedIconName}</p>
+      <Icon size={IconSize} iconKey={iconKey} />
+      <p>{IconMap[iconKey].name}</p>
     </div>
   );
 };
 
-export default Icon;
+export default IconCard;

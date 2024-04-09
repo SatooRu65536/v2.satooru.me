@@ -1,7 +1,8 @@
-import { SiGithub, SiX } from '@icons-pack/react-simple-icons';
 import { ReactElement } from 'react';
 
 import styles from './index.module.scss';
+
+import Icon from '@/elements/icon';
 
 const LinksSection = (): ReactElement => {
   return (
@@ -9,24 +10,14 @@ const LinksSection = (): ReactElement => {
       <div>
         <p>
           <a href="https://x.com/SatooRu65536">
-            <SiX
-              className={styles.icon}
-              size={24}
-              onPointerEnterCapture={undefined}
-              onPointerLeaveCapture={undefined}
-            />
+            <Icon iconKey="x" className={styles.icon} />
             <span>@SatooRu65536</span>
           </a>
         </p>
 
         <p>
           <a href="http://github.com/SatooRu65536/">
-            <SiGithub
-              className={styles.icon}
-              size={24}
-              onPointerEnterCapture={undefined}
-              onPointerLeaveCapture={undefined}
-            />
+            <Icon iconKey="github" className={styles.icon} />
             <span>@SatooRu65536</span>
           </a>
         </p>

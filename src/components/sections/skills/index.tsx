@@ -2,10 +2,11 @@ import { ReactElement } from 'react';
 
 import styles from './index.module.scss';
 
-import Icon, { IconName } from '@/elements/iconCard';
+import { IconKey } from '@/elements/icon';
+import IconCard from '@/elements/iconCard';
 import SectionLayout from '@/layouts/section';
 
-const SKILLS: IconName[] = [
+const SKILLS: IconKey[] = [
   'html',
   'css',
   'scss',
@@ -36,7 +37,7 @@ const SkillsSection = (): ReactElement => {
     <SectionLayout title="Skills" align="center">
       <div className={styles.grid}>
         {SKILLS.map((name) => (
-          <Icon key={name} name={name} size="lg" />
+          <IconCard key={name} iconKey={name} size="lg" />
         ))}
       </div>
     </SectionLayout>
