@@ -2,6 +2,7 @@ import { ReactElement } from 'react';
 
 import aftereffects from './icons/aftereffects';
 import c from './icons/c';
+import css from './icons/css';
 import cloudflare from './icons/cloudflare';
 import firebase from './icons/firebase';
 import github from './icons/github';
@@ -27,6 +28,7 @@ import styles from './index.module.scss';
 const Icons = {
   aftereffects,
   c,
+  css,
   cloudflare,
   firebase,
   github,
@@ -48,6 +50,8 @@ const Icons = {
   svelte,
   typescript,
 } as const;
+
+export type IconName = keyof typeof Icons;
 
 interface Props {
   name: keyof typeof Icons;
