@@ -1,0 +1,44 @@
+.card {
+  overflow-x: scroll;
+  display: flex;
+  justify-content: flex-end;
+
+  > div {
+    min-width: 0;
+  }
+
+  .left {
+    flex: 1;
+
+    .title {
+      font-size: $fontsize-md;
+    }
+
+    .tag {
+      font-size: $fontsize-sm;
+    }
+
+    .tech_wrapper {
+      padding-block: 10px 15px;
+      width: 100%;
+      overflow-x: scroll;
+
+      & > div {
+        width: fit-content;
+        display: flex;
+        gap: 10px;
+      }
+    }
+  }
+
+  .right {
+    width: 100px;
+
+    .thumbnail {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  }
+}

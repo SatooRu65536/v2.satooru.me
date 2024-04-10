@@ -11,12 +11,14 @@ interface Props {
 
 const IconCard = (props: Props): ReactElement => {
   const { iconKey, size } = props;
-  const IconSize = size === 'lg' ? 48 : 24;
+  const cardSize = size === 'lg' ? '120px' : '80px';
+  const iconSize = size === 'lg' ? 48 : 32;
+  const fontSize = size === 'lg' ? '1rem' : '0.75rem';
 
   return (
-    <div className={styles.icon}>
-      <Icon size={IconSize} iconKey={iconKey} />
-      <p>{IconMap[iconKey].name}</p>
+    <div className={styles.icon} style={{ width: cardSize }}>
+      <Icon size={iconSize} iconKey={iconKey} />
+      <p style={{ fontSize }}>{IconMap[iconKey].name}</p>
     </div>
   );
 };
