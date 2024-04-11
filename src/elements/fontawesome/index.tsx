@@ -1,5 +1,5 @@
 import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 
 const IconsMap = {
   faUpRightFromSquare,
@@ -7,15 +7,15 @@ const IconsMap = {
 
 export type AwesomeIconKey = keyof typeof IconsMap;
 
-interface Props {
+interface Props extends Omit<FontAwesomeIconProps, 'icon'> {
   iconKey: AwesomeIconKey;
 }
 
 const Fontawesome = (props: Props) => {
-  const { iconKey } = props;
+  const { iconKey, ...rest } = props;
   const icon = IconsMap[iconKey];
 
-  return <FontAwesomeIcon icon={icon} />;
+  return <FontAwesomeIcon {...rest} icon={icon} />;
 };
 
 export default Fontawesome;
