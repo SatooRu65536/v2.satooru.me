@@ -12,10 +12,10 @@ export default function Page() {
       <AbountSection />
       <LinksSection />
       <SkillsSection />
-      <ProductsSection />
-      <AwardsSection />
-      <WorksSection />
       <ProjectsSection />
+      <WorksSection />
+      <AwardsSection />
+      <ProductsSection />
     </>
   );
 }
