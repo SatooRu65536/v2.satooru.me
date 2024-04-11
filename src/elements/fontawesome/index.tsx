@@ -1,8 +1,9 @@
-import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { faUpRightFromSquare, faWindowMaximize } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 
 const IconsMap = {
   faUpRightFromSquare,
+  faWindowMaximize,
 } as const;
 
 export type AwesomeIconKey = keyof typeof IconsMap;
