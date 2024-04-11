@@ -3,6 +3,7 @@ import AwardsSection from '@/components/sections/awards';
 import LinksSection from '@/components/sections/links';
 import ProductsSection from '@/components/sections/products';
 import SkillsSection from '@/components/sections/skills';
+import WorksSection from '@/components/sections/works';
 
 export default function Page() {
   return (
@@ -12,6 +13,7 @@ export default function Page() {
       <SkillsSection />
       <ProductsSection />
       <AwardsSection />
+      <WorksSection />
     </>
   );
 }
