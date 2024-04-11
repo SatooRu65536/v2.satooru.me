@@ -2,25 +2,21 @@ import { ReactElement } from 'react';
 
 import styles from './index.module.scss';
 
+import { LINKS } from '@/const/links';
 import Icon from '@/elements/icon';
 
 const LinksSection = (): ReactElement => {
   return (
     <section className={styles.links}>
       <div>
-        <p>
-          <a href="https://x.com/SatooRu65536" target="_blank">
-            <Icon iconKey="x" className={styles.icon} />
-            <span>@SatooRu65536</span>
-          </a>
-        </p>
-
-        <p>
-          <a href="http://github.com/SatooRu65536/" target="_blank">
-            <Icon iconKey="github" className={styles.icon} />
-            <span>@SatooRu65536</span>
-          </a>
-        </p>
+        {LINKS.map((link) => (
+          <p key={link.link}>
+            <a href={link.link} target="_blank">
+              <Icon iconKey={link.iconKey} className={styles.icon} />
+              <span>{link.name}</span>
+            </a>
+          </p>
+        ))}
       </div>
     </section>
   );
