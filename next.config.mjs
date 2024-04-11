@@ -3,7 +3,10 @@ const nextConfig = {
   output: 'export',
   reactStrictMode: true,
   sassOptions: {
-    additionalData: '@import "@/styles/variable.scss";\n@import "@/styles/responsive.scss";',
+    additionalData: `
+      @import "@/styles/variable.scss";
+      @import "@/styles/responsive.scss";
+    `,
   },
 };
 
