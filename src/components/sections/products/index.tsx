@@ -1,10 +1,10 @@
 import dayjs from 'dayjs';
 import { ReactElement } from 'react';
 
+import ProductCard from './card';
 import styles from './index.module.scss';
 
 import { IconKey } from '@/elements/icon';
-import ProductCard from '@/elements/productCard';
 import SectionLayout from '@/layouts/section';
 
 interface Product {
