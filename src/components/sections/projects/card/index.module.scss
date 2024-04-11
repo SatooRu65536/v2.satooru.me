@@ -1,5 +1,7 @@
 .card {
   width: 300px;
+  display: flex;
+  flex-direction: column;
 
   .title {
     font-size: $fontsize-md;
@@ -22,6 +24,7 @@
   }
 
   .buttons {
+    margin-top: auto;
     display: flex;
     flex-direction: row-reverse;
     gap: 10px;
