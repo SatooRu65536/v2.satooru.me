@@ -2,6 +2,7 @@
   overflow-x: scroll;
   display: flex;
   justify-content: flex-end;
+  gap: 10px;
 
   > div {
     min-width: 0;
@@ -28,6 +29,10 @@
         display: flex;
         gap: 10px;
       }
+    }
+
+    .date {
+      font-size: $fontsize-sm;
     }
   }
 

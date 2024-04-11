@@ -1,3 +1,4 @@
+import dayjs, { Dayjs } from 'dayjs';
 import { ReactElement } from 'react';
 
 import styles from './index.module.scss';
@@ -11,12 +12,13 @@ interface Props {
   w: 250 | 300;
   techs: IconKey[];
   thumbnail?: string;
+  date: Dayjs;
 }
 
 const defaultThumbnail = '/public/default/penguin.webp';
 
 const ProductCard = (props: Props): ReactElement => {
-  const { title, tag, w, techs, thumbnail } = props;
+  const { title, tag, w, techs, thumbnail, date } = props;
 
   return (
     <CardLayout style={{ width: `${w}px` }} className={styles.card}>
@@ -30,6 +32,7 @@ const ProductCard = (props: Props): ReactElement => {
             ))}
           </div>
         </div>
+        <p className={styles.date}>{dayjs(date).format('YYYY/MM/DD')}</p>
       </div>
 
       <div className={styles.right}>
