@@ -4,7 +4,6 @@
   - Turbopack
 - Prettier
 - ESLint
-- Jest
 - Storybook
 
 
