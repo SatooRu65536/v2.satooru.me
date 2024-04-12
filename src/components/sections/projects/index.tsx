@@ -6,6 +6,7 @@ import { ReactElement } from 'react';
 import ProjectCard from './card';
 import styles from './index.module.scss';
 
+import Loading from '@/elements/loading';
 import SectionLayout from '@/layouts/section';
 import { projectsAtomLoadable } from '@/store/projectsAtom';
 
@@ -14,7 +15,11 @@ const ProjectsSection = (): ReactElement => {
 
   return (
     <SectionLayout title="Active Projects" className={styles.projects}>
-      {projects.state === 'hasData' &&
+      {projects.state === 'loading' ? (
+        <Loading />
+      ) : projects.state === 'hasError' ? (
+        <p>Error</p>
+      ) : (
         projects.data.map((project) => (
           <ProjectCard
             key={project.name}
@@ -24,7 +29,8 @@ const ProjectsSection = (): ReactElement => {
             repository={project.repository}
             site={project.site}
           />
-        ))}
+        ))
+      )}
     </SectionLayout>
   );
 };
