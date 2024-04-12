@@ -49,7 +49,7 @@ export const Nextdotjs: Story = {
   args: { iconKey: 'nextjs' },
 };
 export const Nodedotjs: Story = {
-  args: { iconKey: 'nodejs' },
+  args: { iconKey: 'node' },
 };
 export const Prisma: Story = {
   args: { iconKey: 'prisma' },

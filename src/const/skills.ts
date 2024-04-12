@@ -14,7 +14,7 @@ export const SKILLS: IconKey[] = [
   'tauri',
   'electron',
   'storybook',
-  'nodejs',
+  'node',
   'hono',
   'nestjs',
   'rails',
