@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   category: 'website',
   keywords: KEY_WORDS,
   openGraph: {
-    title: 'システム工学研究会',
+    title: SITE_NAME,
     description: DESCRIPTION,
     url: HOST_NAME,
     siteName: SITE_NAME,
