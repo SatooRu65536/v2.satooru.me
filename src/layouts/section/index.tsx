@@ -5,13 +5,13 @@ import styles from './index.module.scss';
 interface Props {
   children: ReactNode;
   title?: string | ReactElement;
-  align?: 'left' | 'center' | 'right';
+  leftSpace?: boolean;
   underline?: boolean;
   className?: string;
 }
 
 const SectionLayout = (props: Props): ReactElement => {
-  const { children, title, align, underline, className } = props;
+  const { children, title, leftSpace, underline, className } = props;
 
   return (
     <section className={styles.section}>
@@ -19,7 +19,7 @@ const SectionLayout = (props: Props): ReactElement => {
         {typeof title === 'string' ? <h1>{title}</h1> : title}
       </div>
 
-      <div className={`${styles.content} ${className}`} data-align={align}>
+      <div className={`${styles.content} ${className}`} data-leftspace={leftSpace}>
         {children}
       </div>
     </section>

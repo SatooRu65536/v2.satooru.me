@@ -5,7 +5,7 @@
   max-width: 900px;
 
   @include mobile {
-    padding: 20px;  
+    padding: 20px;
   }
 
   .title {
@@ -31,14 +31,8 @@
   .content {
     margin: 20px 0;
 
-    &[data-align='left'] {
-      text-align: left;
-    }
-    &[data-align='right'] {
-      margin-inline: auto 20px;
-    }
-    &[data-align='center'] {
-      text-align: center;
+    &[data-leftspace='true'] {
+      margin-left: 2rem;
     }
   }
 }

@@ -7,7 +7,7 @@ import SectionLayout from '@/layouts/section';
 
 const AbountSection = (): ReactElement => {
   return (
-    <SectionLayout title={<Title />} align="left" underline>
+    <SectionLayout title={<Title />} underline>
       {ABOUT.map((a, i) => (
         <p key={i}>{a}</p>
       ))}

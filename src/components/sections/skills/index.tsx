@@ -8,7 +8,7 @@ import SectionLayout from '@/layouts/section';
 
 const SkillsSection = (): ReactElement => {
   return (
-    <SectionLayout title="Skills" align="center">
+    <SectionLayout title="Skills">
       <div className={styles.grid}>
         {SKILLS.map((name) => (
           <IconCard key={name} iconKey={name} size="lg" />
