@@ -8,7 +8,7 @@ import SectionLayout from '@/layouts/section';
 
 const RecentPostsSection = (): ReactElement => {
   return (
-    <SectionLayout title="Recent Posts" className={styles.recent_blogs}>
+    <SectionLayout title="Recent Posts" className={styles.recent_posts}>
       <PostCard
         title="Title"
         content="こんてんつがはいりますとてもながいよこんてんつがはいりますとてもながいよこんてんつがはいりますとてもながいよ"

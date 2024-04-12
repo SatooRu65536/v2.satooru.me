@@ -5,7 +5,7 @@ import styles from './index.module.scss';
 
 const LINKS = [
   { title: 'Home', href: '/' },
-  { title: 'Blogs', href: '/blogs' },
+  { title: 'Posts', href: '/posts' },
 ];
 
 const Header = (): ReactElement => {
