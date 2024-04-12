@@ -3,4 +3,23 @@
   background-color: $background-color;
   border-radius: 10px;
   border: solid 1px $primary-color;
+  position: relative;
+
+  &[data-haslink='true'] {
+    transition: $transition;
+    border: solid 1.5px $accent-color;
+
+    &:hover {
+      scale: 1.03;
+    }
+  }
+
+  .link {
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
 }

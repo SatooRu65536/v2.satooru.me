@@ -1,5 +1,6 @@
 import AbountSection from '@/components/sections/about';
 import AwardsSection from '@/components/sections/awards';
+import RecentBlogsSection from '@/components/sections/posts';
 import LinksSection from '@/components/sections/links';
 import ProductsSection from '@/components/sections/products';
 import ProjectsSection from '@/components/sections/projects';
@@ -15,6 +16,7 @@ export default function Page() {
       <ProjectsSection />
       <WorksSection />
       <AwardsSection />
+      <RecentBlogsSection />
       <ProductsSection />
     </>
   );
