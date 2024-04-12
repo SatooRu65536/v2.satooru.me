@@ -11,7 +11,7 @@ const RecentPostsSection = (): ReactElement => {
     <SectionLayout title="Recent Posts" className={styles.recent_blogs}>
       <PostCard
         title="Title"
-        content="こんてんつがはいりますとてもながいよ"
+        content="こんてんつがはいりますとてもながいよこんてんつがはいりますとてもながいよこんてんつがはいりますとてもながいよ"
         date={dayjs('2023-01-01')}
         link="/posts/1"
       />

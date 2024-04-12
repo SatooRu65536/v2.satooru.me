@@ -22,7 +22,9 @@ const PostCard = (props: Props): ReactElement => {
     <CardLayout className={styles.card} link={link}>
       <div className={styles.left}>
         <h3 className={styles.title}>{title}</h3>
-        <h4 className={styles.content}>{content}</h4>
+        <div className={styles.content}>
+          <p>{content}</p>
+        </div>
         <p className={styles.date}>{dayjs(date).format('YYYY/MM/DD')}</p>
       </div>
 
