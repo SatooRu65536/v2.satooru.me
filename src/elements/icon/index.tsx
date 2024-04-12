@@ -77,9 +77,7 @@ const Icon = (props: Props): ReactElement => {
   const SelectedIcon = IconMap[iconKey].icon;
   const SelectedColot = color ?? 'default';
 
-  return (
-    <SelectedIcon {...rest} color={SelectedColot} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
-  );
+  return <SelectedIcon {...rest} color={SelectedColot} />;
 };
 
 export default Icon;
