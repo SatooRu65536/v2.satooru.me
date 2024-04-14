@@ -5,34 +5,27 @@ import PostCard from './card';
 import styles from './index.module.scss';
 
 import SectionLayout from '@/layouts/section';
+import { GetArticle } from '@/utils/articles';
 
-const RecentPostsSection = (): ReactElement => {
+interface Props {
+  articles: GetArticle[] | undefined;
+}
+
+const RecentPostsSection = (props: Props): ReactElement => {
+  const { articles } = props;
+
   return (
     <SectionLayout title="Recent Posts" className={styles.recent_posts}>
-      <PostCard
-        title="Title"
-        content="こんてんつがはいりますとてもながいよこんてんつがはいりますとてもながいよこんてんつがはいりますとてもながいよ"
-        date={dayjs('2023-01-01')}
-        link="/posts/1"
-      />
-      <PostCard
-        title="Title"
-        content="こんてんつがはいりますとてもながいよ"
-        date={dayjs('2023-01-02')}
-        link="/posts/2"
-      />
-      <PostCard
-        title="Title"
-        content="こんてんつがはいりますとてもながいよ"
-        date={dayjs('2023-01-03')}
-        link="/posts/3"
-      />
-      <PostCard
-        title="Title"
-        content="こんてんつがはいりますとてもながいよ"
-        date={dayjs('2023-01-04')}
-        link="/posts/4"
-      />
+      {articles &&
+        articles.map(({ article, postedAt }) => (
+          <PostCard
+            key={article.data.number}
+            title={article.data.title}
+            content={article.content}
+            date={dayjs(postedAt)}
+            link={`/post/${article.data.number}`}
+          />
+        ))}
     </SectionLayout>
   );
 };

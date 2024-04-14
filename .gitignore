@@ -39,3 +39,6 @@ package-lock.json
 
 *storybook.log
 stories/
+
+# 制作中のみ
+/articles
