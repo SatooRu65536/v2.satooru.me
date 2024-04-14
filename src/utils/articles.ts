@@ -40,7 +40,7 @@ const parseMetaTag = (tags: string[], key: string, defaultValue: string, check?:
  * tags から 投稿日を取得する
  */
 const getPostDate = (tags: string | null): string | null => {
-  if (!tags) return '';
+  if (!tags) return null;
   const date = parseMetaTag(tags.split(','), 'date', '', /^\d{4}-\d{1,2}-\d{1,2}$/);
   return date;
 };

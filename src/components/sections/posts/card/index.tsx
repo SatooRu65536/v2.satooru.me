@@ -20,8 +20,9 @@ const PostCard = (props: Props): ReactElement => {
 
   return (
     <CardLayout className={styles.card} link={link}>
+      <h3 className={styles.title}>{title}</h3>
+
       <div className={styles.left}>
-        <h3 className={styles.title}>{title}</h3>
         <div className={styles.content}>
           <p>{content}</p>
         </div>
