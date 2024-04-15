@@ -26,6 +26,10 @@
       height: 80px;
       font-size: $fontsize-sm;
       overflow: hidden;
+
+      @include mobile {
+        height: 75px;
+      }
     }
 
     .date {
