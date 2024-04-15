@@ -24,7 +24,7 @@ const PostCard = (props: Props): ReactElement => {
 
       <div className={styles.left}>
         <div className={styles.content}>
-          <p>{content}</p>
+          <p>{content.slice(0, 150)}</p>
         </div>
         <p className={styles.date}>{dayjs(date).format('YYYY/MM/DD')}</p>
       </div>
