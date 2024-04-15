@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { DetailedHTMLProps, HTMLAttributes, ReactElement } from 'react';
 
 import styles from './index.module.scss';
@@ -12,7 +13,7 @@ const CardLayout = (props: Props): ReactElement => {
 
   return (
     <article className={`${styles.card} ${className}`} {...rest} data-haslink={link !== undefined}>
-      {link !== undefined && <a href={link} className={styles.link} />}
+      {link !== undefined && <Link href={link} className={styles.link} />}
       {children}
     </article>
   );
