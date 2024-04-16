@@ -15,7 +15,14 @@ const ProductsSection = (props: Props): ReactElement => {
 
   return (
     <SectionLayout title="Products" className={styles.products}>
-      {articles && articles.map((article) => <ProductCard key={article.article.data.number} article={article} />)}
+      {articles &&
+        articles.map((article) => (
+          <ProductCard
+            key={article.article.data.number}
+            article={article}
+            link={`/post/${article.article.data.number}`}
+          />
+        ))}
     </SectionLayout>
   );
 };

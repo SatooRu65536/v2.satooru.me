@@ -9,16 +9,17 @@ import { GetArticle, getProduct } from '@/utils/articles';
 
 interface Props {
   article: GetArticle;
+  link: string;
 }
 
 const defaultThumbnail = '/default/penguin.webp';
 
 const ProductCard = (props: Props): ReactElement => {
-  const { article } = props;
+  const { article, link } = props;
   const { title, tag, techs, thumbnail, createdAt } = getProduct(article);
 
   return (
-    <CardLayout className={styles.card}>
+    <CardLayout className={styles.card} link={link}>
       <div className={styles.left}>
         <h3 className={styles.title}>{title}</h3>
         <h4 className={styles.tag}>{tag}</h4>
