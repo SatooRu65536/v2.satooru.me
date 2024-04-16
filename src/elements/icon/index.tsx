@@ -78,6 +78,20 @@ export const IconMap = {
 
 export type IconKey = keyof typeof IconMap;
 
+/**
+ * IconKey に含まれるキーかどうかを判定
+ */
+const isIconKeys = (keys: string[]): keys is IconKey[] => keys.every((key) => key in IconMap);
+
+/**
+ * IconKey に含まれるキーのみを返す
+ */
+export const filterIconKeys = (keys: string[]): IconKey[] => {
+  const iconKeys = keys.filter((key) => key in IconMap);
+  if (isIconKeys(iconKeys)) return iconKeys;
+  return [];
+};
+
 interface Props {
   iconKey: IconKey;
   color?: string;

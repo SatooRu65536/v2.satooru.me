@@ -1,4 +1,5 @@
 .card {
+  width: 300px;
   overflow-x: scroll;
   display: flex;
   justify-content: flex-end;
@@ -13,6 +14,9 @@
 
     .title {
       font-size: $fontsize-md;
+      text-wrap: nowrap;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
     }
 
     .tag {
@@ -20,18 +24,21 @@
     }
 
     .tech_wrapper {
-      padding-block: 6px 12px;
+      padding-block: 6px;
       width: 100%;
       overflow-x: scroll;
 
       & > div {
         width: fit-content;
+        height: 24px;
         display: flex;
         gap: 10px;
       }
     }
 
     .date {
+      margin-top: 4px;
+      line-height: 0.8rem;
       font-size: $fontsize-sm;
     }
   }

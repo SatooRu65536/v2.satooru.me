@@ -9,7 +9,7 @@ import WorksSection from '@/components/sections/works';
 import { getArticles } from '@/utils/articles';
 
 export default function Page() {
-  const articles = getArticles();
+  const { articles, products } = getArticles();
 
   return (
     <>
@@ -20,7 +20,7 @@ export default function Page() {
       <WorksSection />
       <AwardsSection />
       <RecentPostsSection articles={articles.slice(0, 6)} />
-      <ProductsSection />
+      <ProductsSection articles={products} />
     </>
   );
 }
