@@ -30,8 +30,6 @@ export const generateStaticParams = (): StaticSlug[] => {
     })
     .flat(1);
 
-  console.log([...articleSlugs, ...listCategorySlugs]);
-
   const listAllPageCount = Math.ceil(articles.length / PER_PAGE);
   const listAllSlugs: StaticSlug[] = Array.from({ length: listAllPageCount }).map((_, i) => ({
     slug: ['list', (i + 1).toString()],
