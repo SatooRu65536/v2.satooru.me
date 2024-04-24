@@ -1,7 +1,8 @@
-import { ReactElement } from 'react';
+import { ReactElement, Suspense } from 'react';
 
 import ListPostPage from '@/components/page/ListPost';
 import PostPage from '@/components/page/PostPage';
+import Loading from '@/elements/loading';
 import { getArticles } from '@/utils/articles';
 
 const { articles } = getArticles();
@@ -41,7 +42,9 @@ const Page = (props: Props): ReactElement => {
   return (
     <>
       {isListPage ? (
-        <ListPostPage articles={articles} category={category} />
+        <Suspense fallback={<Loading />}>
+          <ListPostPage articles={articles} category={category} />
+        </Suspense>
       ) : (
         <PostPage articles={articles} number={articleNum} />
       )}
