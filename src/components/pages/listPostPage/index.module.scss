@@ -1,9 +1,17 @@
 .container {
-  margin-inline: auto;
-  max-width: 1200px;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 300px);
-  justify-content: center;
-  gap: 20px;
+  .articles {
+    margin-inline: auto;
+    max-width: 1200px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .pagenation {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
 }
