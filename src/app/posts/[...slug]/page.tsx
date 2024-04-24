@@ -1,6 +1,6 @@
 import { ReactElement, Suspense } from 'react';
 
-import ListPostPage from '@/components/pages/listPost';
+import ListPostPage from '@/components/pages/listPostPage';
 import PostPage from '@/components/pages/postPage';
 import Loading from '@/elements/loading';
 import { getArticles } from '@/utils/articles';
