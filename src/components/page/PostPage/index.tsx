@@ -1,16 +1,16 @@
+import { GetArticle } from '@/utils/articles';
+
 interface Props {
-  category: string | undefined;
+  articles: GetArticle[];
   number: number;
 }
 
 const PostPage = (props: Props) => {
-  const { category, number } = props;
+  const { articles, number } = props;
 
-  return (
-    <div>
-      PostPage: {category}/{number}
-    </div>
-  );
+  const article = articles.find((article) => article.article.data.number === number);
+
+  return <div>{article?.article.data.title}</div>;
 };
 
 export default PostPage;
