@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 
 import styles from './index.module.scss';
 
-import IconCard from '@/components/shares/iconCard';
+import IconCard from '@/components/shares/iconcard';
 import { SKILLS } from '@/const/skills';
 import SectionLayout from '@/layouts/section';
 
