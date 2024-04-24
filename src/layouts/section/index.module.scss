@@ -1,4 +1,13 @@
 .section {
+  margin-inline: auto;
+  padding: 40px;
+  width: 100%;
+  max-width: 900px;
+
+  @include mobile {
+    padding: 20px;
+  }
+
   .title {
     h1 {
       font-size: $fontsize-xl;

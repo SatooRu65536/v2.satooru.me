@@ -15,9 +15,7 @@ const PageLayout = (props: Props): ReactElement => {
   return (
     <>
       <Header />
-      <main className={styles.main}>
-        <div>{children}</div>
-      </main>
+      <main className={styles.main}>{children}</main>
       <Footer />
     </>
   );
