@@ -2,7 +2,7 @@ import dayjs, { Dayjs } from 'dayjs';
 import { atom } from 'jotai';
 import { loadable } from 'jotai/utils';
 
-import { IconKey, IconMap } from '@/elements/icon';
+import { IconKey, IconMap } from '@/components/shares/icon';
 import { getKeys } from '@/utils';
 
 interface GitHubRepo {

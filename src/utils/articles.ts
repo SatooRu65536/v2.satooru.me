@@ -3,7 +3,7 @@ import path from 'path';
 
 import matter, { GrayMatterFile } from 'gray-matter';
 
-import { IconKey, filterIconKeys } from '@/elements/icon';
+import { IconKey, filterIconKeys } from '@/components/shares/icon';
 
 const ARTICLES_PATH = '/articles';
 const CACHE_DIR = '/node_modules/.cache/';

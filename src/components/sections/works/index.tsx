@@ -2,8 +2,8 @@ import { ReactElement } from 'react';
 
 import styles from './index.module.scss';
 
+import ListItem from '@/components/shares/listItem';
 import { WORKS } from '@/const/works';
-import ListItem from '@/elements/listITem';
 import SectionLayout from '@/layouts/section';
 
 const WorksSection = (): ReactElement => {

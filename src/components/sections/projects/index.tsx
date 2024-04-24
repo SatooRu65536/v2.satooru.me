@@ -6,7 +6,7 @@ import { ReactElement } from 'react';
 import ProjectCard from './card';
 import styles from './index.module.scss';
 
-import Loading from '@/elements/loading';
+import Loading from '@/components/shares/loading';
 import SectionLayout from '@/layouts/section';
 import { projectsAtomLoadable } from '@/store/projectsAtom';
 

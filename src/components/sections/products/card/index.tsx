@@ -3,7 +3,7 @@ import { ReactElement } from 'react';
 
 import styles from './index.module.scss';
 
-import Icon from '@/elements/icon';
+import Icon from '@/components/shares/icon';
 import CardLayout from '@/layouts/card';
 import { GetArticle, getProduct } from '@/utils/articles';
 

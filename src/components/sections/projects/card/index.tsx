@@ -2,8 +2,8 @@ import { ReactElement } from 'react';
 
 import styles from './index.module.scss';
 
-import Fontawesome from '@/elements/fontawesome';
-import Icon, { IconKey } from '@/elements/icon';
+import Fontawesome from '@/components/shares/fontawesome';
+import Icon, { IconKey } from '@/components/shares/icon';
 import CardLayout from '@/layouts/card';
 
 interface Props {

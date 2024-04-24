@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 
 import styles from './index.module.scss';
 
-import Icon, { IconKey, IconMap } from '@/elements/icon';
+import Icon, { IconKey, IconMap } from '@/components/shares/icon';
 
 interface Props {
   iconKey: IconKey;

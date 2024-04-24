@@ -1,7 +1,15 @@
-import { ReactElement } from 'react';
+import { HTMLProps, ReactElement } from 'react';
 
-const Loading = (): ReactElement => {
-  return <div>Loading...</div>;
+import styles from './index.module.scss';
+
+interface Props extends HTMLProps<HTMLDivElement> {}
+
+const Loading = (props: Props): ReactElement => {
+  return (
+    <div {...props} className={styles.loading}>
+      <div />
+    </div>
+  );
 };
 
 export default Loading;

@@ -2,8 +2,8 @@ import { ReactElement } from 'react';
 
 import styles from './index.module.scss';
 
+import Icon from '@/components/shares/icon';
 import { LINKS } from '@/const/links';
-import Icon from '@/elements/icon';
 
 const LinksSection = (): ReactElement => {
   return (

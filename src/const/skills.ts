@@ -1,4 +1,4 @@
-import { IconKey } from '@/elements/icon';
+import { IconKey } from '@/components/shares/icon';
 
 export const SKILLS: IconKey[] = [
   'html',

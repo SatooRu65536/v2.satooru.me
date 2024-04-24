@@ -3,7 +3,7 @@ import { ReactElement } from 'react';
 
 import styles from './index.module.scss';
 
-import Fontawesome from '@/elements/fontawesome';
+import Fontawesome from '@/components/shares/fontawesome';
 
 export interface ListItemProps {
   date: Dayjs | [Dayjs] | [Dayjs, Dayjs];
