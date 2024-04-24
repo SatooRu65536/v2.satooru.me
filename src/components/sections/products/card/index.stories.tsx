@@ -11,10 +11,22 @@ type Story = StoryObj<typeof Card>;
 
 export const Primary: Story = {
   args: {
-    title: 'Card Title',
-    tag: '#webアプリ',
-    w: 300,
-    thumbnail: '/icon.webp',
-    techs: ['javascript', 'typescript', 'react', 'nextjs', 'tauri', 'aftereffects', 'c', 'cloudflare'],
+    article: {
+      article: {
+        data: {
+          category: 'product',
+          created_at: '2021-09-01T00:00:00.000Z',
+          number: 0,
+          title: 'Product 1',
+          published: 'true',
+          tags: 'javascript, typescript, react, nextjs, tauri, aftereffects, c, cloudflare',
+          updated_at: '2021-09-01T00:00:00.000Z',
+        },
+        content: 'Product 1 content',
+      },
+      category: 'product',
+      filePath: 'articles/0.html.md',
+      postedAt: '2021-09-01T00:00:00.000Z',
+    },
   },
 };
