@@ -6,7 +6,6 @@ import matter, { GrayMatterFile } from 'gray-matter';
 import { IconKey, filterIconKeys } from '@/components/shares/icon';
 
 const ARTICLES_PATH = '/articles';
-const CACHE_DIR = '/node_modules/.cache/';
 const FIRST_IMAGE_REGEX = /[\s\n]*(<img.*?src=['"](.*)['"].*>|!\[.*\]\((.*)\))/;
 
 interface Article {
@@ -75,29 +74,14 @@ const readFile = (filePath: string): Article => {
 };
 
 /**
- * 記事をキャッシュする
- */
-const cacheArticles = (groupedArticles: Article[]): void => {
-  const cacheDir = path.join(process.cwd(), CACHE_DIR);
-  if (!fs.existsSync(cacheDir)) {
-    fs.mkdirSync(cacheDir);
-  }
-
-  const cacheFilePath = path.join(cacheDir, 'articles.json');
-  fs.writeFileSync(cacheFilePath, JSON.stringify(groupedArticles));
-};
-
-/**
  * ファイルを読み込む
  */
-const loadFiles = (): void => {
+const loadFiles = (): Article[] => {
   const articlesDir = path.join(process.cwd(), ARTICLES_PATH);
   const filePaths = getFilePaths(articlesDir);
   const articles = filePaths.map((filePath) => readFile(filePath));
-  cacheArticles(articles);
+  return articles;
 };
-
-loadFiles();
 
 /* ---------- */
 
@@ -110,26 +94,37 @@ const getInfo = (content: string, header: string, level: number | undefined = un
   return match ? match[1] : '';
 };
 
+/**
+ * 記事からサムネイルを取得する
+ */
+export const getThumbnail = (content: string): string | undefined => {
+  const match = content.match(FIRST_IMAGE_REGEX);
+  const thumbnail = (match && (match[2] || match[3])) ?? undefined;
+  return thumbnail;
+};
+
 export interface GetArticle {
-  article: {
-    content: string;
-    data: EsaMeta;
-  };
+  content: string;
+  data: EsaMeta;
   filePath: string;
   category: string;
   postedAt: string;
+  thumbnail?: string;
 }
 
 /**
  * 記事を取得する
  */
-export const getArticles = () => {
-  const cacheDir = path.join(process.cwd(), CACHE_DIR);
-  const cacheFilePath = path.join(cacheDir, 'articles.json');
-  const cacheFile = fs.readFileSync(cacheFilePath, 'utf-8');
-  const articles = JSON.parse(cacheFile) as GetArticle[];
+const getArticles = () => {
+  const articles = loadFiles();
+  const formattedArticles: GetArticle[] = articles.map((article) => {
+    const thumbnail = getThumbnail(article.article.content);
+    const { data, content } = article.article;
+    const { filePath, category, postedAt } = article;
+    return { content, filePath, category, postedAt, thumbnail, data: data as EsaMeta };
+  });
 
-  const sortedArticles = articles.sort((a, b) => {
+  const sortedArticles = formattedArticles.sort((a, b) => {
     const aDate = new Date(a.postedAt);
     const bDate = new Date(b.postedAt);
     return bDate.getTime() - aDate.getTime();
@@ -139,6 +134,8 @@ export const getArticles = () => {
 
   return { articles: sortedArticles, products: productArticles };
 };
+
+export const { articles, products } = getArticles();
 
 export interface Product {
   title: string;
@@ -151,12 +148,11 @@ export interface Product {
 /**
  * 記事から product の情報を取り出す
  */
-export const getProduct = (article: GetArticle): Product => {
-  const { data, content } = article.article;
+export const toProduct = (article: GetArticle): Product => {
+  const { data, content } = article;
   const { title, tags } = data;
 
-  const match = content.match(FIRST_IMAGE_REGEX);
-  const thumbnail = (match && (match[2] || match[3])) ?? undefined;
+  const thumbnail = getThumbnail(article.content);
 
   const tag = parseMetaTag(tags?.split(', '), 'type', 'その他');
 
@@ -164,13 +160,4 @@ export const getProduct = (article: GetArticle): Product => {
   const techs = filterIconKeys(techsStr.replace(/ /, '').split(','));
 
   return { title, tag, techs, thumbnail, createdAt: article.postedAt };
-};
-
-/**
- * 記事からサムネイルを取得する
- */
-export const getThumbnail = (article: GetArticle): string | undefined => {
-  const match = article.article.content.match(FIRST_IMAGE_REGEX);
-  const thumbnail = (match && (match[2] || match[3])) ?? undefined;
-  return thumbnail;
 };

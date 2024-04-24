@@ -5,7 +5,7 @@ import styles from './index.module.scss';
 
 import Icon from '@/components/shares/icon';
 import CardLayout from '@/layouts/card';
-import { GetArticle, getProduct } from '@/utils/articles';
+import { GetArticle, toProduct } from '@/utils/articles';
 
 interface Props {
   article: GetArticle;
@@ -16,7 +16,7 @@ const defaultThumbnail = '/default/penguin.webp';
 
 const ProductCard = (props: Props): ReactElement => {
   const { article, link } = props;
-  const { title, tag, techs, thumbnail, createdAt } = getProduct(article);
+  const { title, tag, techs, thumbnail, createdAt } = toProduct(article);
 
   return (
     <CardLayout className={styles.card} link={link}>

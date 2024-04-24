@@ -6,11 +6,9 @@ import ProductsSection from '@/components/sections/products';
 import ProjectsSection from '@/components/sections/projects';
 import SkillsSection from '@/components/sections/skills';
 import WorksSection from '@/components/sections/works';
-import { getArticles } from '@/utils/articles';
+import { articles, products } from '@/utils/articles';
 
 export default function Page() {
-  const { articles, products } = getArticles();
-
   return (
     <>
       <AbountSection />

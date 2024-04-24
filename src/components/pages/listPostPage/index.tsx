@@ -51,12 +51,12 @@ const ListPostPage = (props: Props) => {
 
       <section className={styles.articles_wrapper}>
         <div className={styles.articles}>
-          {displayedArticles?.map(({ article, postedAt }) => (
+          {displayedArticles?.map((article) => (
             <ListPostCard
               key={article.data.number}
               title={article.data.title}
               content={article.content}
-              date={dayjs(postedAt)}
+              date={dayjs(article.postedAt)}
               link={`/posts/${article.data.number}`}
             />
           ))}

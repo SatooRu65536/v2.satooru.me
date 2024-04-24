@@ -17,12 +17,12 @@ const RecentPostsSection = (props: Props): ReactElement => {
   return (
     <SectionLayout title="Recent Posts" className={styles.recent_posts}>
       {articles &&
-        articles.map(({ article, postedAt }) => (
+        articles.map((article) => (
           <PostCard
             key={article.data.number}
             title={article.data.title}
             content={article.content}
-            date={dayjs(postedAt)}
+            date={dayjs(article.postedAt)}
             link={`/posts/${article.data.number}`}
           />
         ))}

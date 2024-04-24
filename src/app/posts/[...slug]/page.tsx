@@ -3,9 +3,7 @@ import { ReactElement, Suspense } from 'react';
 import ListPostPage from '@/components/pages/listPostPage';
 import PostPage from '@/components/pages/postPage';
 import Loading from '@/components/shares/loading';
-import { getArticles } from '@/utils/articles';
-
-const { articles } = getArticles();
+import { articles } from '@/utils/articles';
 
 interface StaticSlug {
   slug: string[];
@@ -13,7 +11,7 @@ interface StaticSlug {
 
 export const generateStaticParams = (): StaticSlug[] => {
   const articleSlugs = articles.map((article) => ({
-    slug: [article.article.data.number.toString()],
+    slug: [article.data.number.toString()],
   }));
 
   const groupedArticles = Object.groupBy(articles, (article) => article.category);

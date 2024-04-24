@@ -14,22 +14,22 @@ interface Props {
 const PostPage = (props: Props) => {
   const { articles, number } = props;
 
-  const article = articles.find((article) => article.article.data.number === number);
+  const article = articles.find((article) => article.data.number === number);
 
   if (article === undefined) {
     return <div>記事が見つかりませんでした</div>;
   }
 
-  const thumbnail = getThumbnail(article);
+  const thumbnail = getThumbnail(article.content);
 
   return (
     <div className={styles.post_container}>
-      <h1 className={styles.title}>{article.article.data.title}</h1>
+      <h1 className={styles.title}>{article.data.title}</h1>
       <p className={styles.postedat}>{dayjs(article.postedAt).format('YYYY年MM月DD日')}</p>
 
       <Thumbnail alt="thumbnail" height="300px" src={thumbnail ?? '/default/penguin.webp'} />
 
-      <ToHtml className={styles.content} content={article.article.content} />
+      <ToHtml className={styles.content} content={article.content} />
     </div>
   );
 };

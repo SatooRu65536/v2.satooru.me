@@ -17,11 +17,7 @@ const ProductsSection = (props: Props): ReactElement => {
     <SectionLayout title="Products" className={styles.products}>
       {articles &&
         articles.map((article) => (
-          <ProductCard
-            key={article.article.data.number}
-            article={article}
-            link={`/posts/${article.article.data.number}`}
-          />
+          <ProductCard key={article.data.number} article={article} link={`/posts/${article.data.number}`} />
         ))}
     </SectionLayout>
   );
