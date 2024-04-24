@@ -1,3 +1,14 @@
 .main {
   min-height: 100vh;
+
+  & > div {
+    margin-inline: auto;
+    padding: 40px;
+    width: 100%;
+    max-width: 900px;
+
+    @include mobile {
+      padding: 20px;
+    }
+  }
 }
