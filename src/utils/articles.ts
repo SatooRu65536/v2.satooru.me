@@ -165,3 +165,12 @@ export const getProduct = (article: GetArticle): Product => {
 
   return { title, tag, techs, thumbnail, createdAt: article.postedAt };
 };
+
+/**
+ * 記事からサムネイルを取得する
+ */
+export const getThumbnail = (article: GetArticle): string | undefined => {
+  const match = article.article.content.match(FIRST_IMAGE_REGEX);
+  const thumbnail = (match && (match[2] || match[3])) ?? undefined;
+  return thumbnail;
+};
