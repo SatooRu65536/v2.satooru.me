@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 import styles from './index.module.scss';
 
 import Thumbnail from '@/components/shares/thumbnail';
-import ToHtml from '@/components/shares/tohtml';
+import ToHtml from '@/components/shares/toHtml';
 import { GetArticle, getThumbnail } from '@/utils/articles';
 
 interface Props {
