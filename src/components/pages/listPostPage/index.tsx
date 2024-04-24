@@ -8,6 +8,7 @@ import ListPostCard from './card';
 import styles from './index.module.scss';
 
 import PageNation from '@/components/shares/pagenation';
+import PostCategories from '@/components/shares/postCategories';
 import { PER_PAGE } from '@/const/setting';
 import { GetArticle } from '@/utils/articles';
 
@@ -19,20 +20,23 @@ interface Props {
 const ListPostPage = (props: Props) => {
   const { articles, category } = props;
 
+  const decodedCategory = category ? decodeURI(category): category;
   const groupedArticles = Object.groupBy(articles, (article) => article.category);
 
   const searchParams = useSearchParams();
   const page = parseInt(searchParams.get('p') ?? '1');
 
-  const allArticles = category ? groupedArticles[category] ?? [] : articles;
+  const allArticles = decodedCategory ? groupedArticles[decodedCategory] ?? [] : articles;
   const displayedArticles = allArticles.slice((page - 1) * PER_PAGE, page * PER_PAGE);
+
+  const categoriesSet = new Set(articles.map((article) => article.category));
 
   const pageTo = useCallback(
     (n: number) => {
-      const path = category ? `/posts/${category}` : '/posts';
+      const path = decodedCategory ? `/posts/${decodedCategory}` : '/posts';
       return `${path}?p=${n}`;
     },
-    [category],
+    [decodedCategory],
   );
 
   if (displayedArticles === undefined || displayedArticles.length === 0) {
@@ -41,6 +45,10 @@ const ListPostPage = (props: Props) => {
 
   return (
     <div className={styles.container}>
+      <section className={styles.categories_wrapper}>
+        <PostCategories categories={categoriesSet} currentCategory={decodedCategory} />
+      </section>
+
       <section className={styles.articles_wrapper}>
         <div className={styles.articles}>
           {displayedArticles?.map(({ article, postedAt }) => (

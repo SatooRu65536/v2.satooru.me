@@ -19,7 +19,7 @@ export const generateStaticParams = (): StaticSlug[] => {
   const groupedArticles = Object.groupBy(articles, (article) => article.category);
 
   const listCategorySlugs: StaticSlug[] = Object.keys(groupedArticles).map((category) => ({
-    slug: [category],
+    slug: [encodeURI(category)],
   }));
 
   return [...articleSlugs, ...listCategorySlugs];
@@ -35,7 +35,7 @@ const Page = (props: Props): ReactElement => {
   const { slug } = props.params;
 
   const lastSlug = slug.at(-1);
-  const articleNum = parseInt(lastSlug ?? '');
+  const articleNum = Number(lastSlug ?? '');
   const isListPage = isNaN(articleNum);
   const category = isListPage ? lastSlug : slug.at(-2) ?? undefined;
 
