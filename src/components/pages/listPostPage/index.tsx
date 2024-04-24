@@ -41,16 +41,18 @@ const ListPostPage = (props: Props) => {
 
   return (
     <div className={styles.container}>
-      <section className={styles.articles}>
-        {displayedArticles?.map(({ article, postedAt }) => (
-          <ListPostCard
-            key={article.data.number}
-            title={article.data.title}
-            content={article.content}
-            date={dayjs(postedAt)}
-            link={`/posts/${article.data.number}`}
-          />
-        ))}
+      <section className={styles.articles_wrapper}>
+        <div className={styles.articles}>
+          {displayedArticles?.map(({ article, postedAt }) => (
+            <ListPostCard
+              key={article.data.number}
+              title={article.data.title}
+              content={article.content}
+              date={dayjs(postedAt)}
+              link={`/posts/${article.data.number}`}
+            />
+          ))}
+        </div>
       </section>
 
       <section className={styles.pagenation}>

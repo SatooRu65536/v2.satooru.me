@@ -1,15 +1,25 @@
 .container {
-  .articles {
-    margin-inline: auto;
-    max-width: 1200px;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 300px);
-    justify-content: center;
-    gap: 20px;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .articles_wrapper {
+    flex: 1;
+
+    .articles {
+      margin-inline: auto;
+      max-width: 1200px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 300px);
+      justify-content: center;
+      gap: 20px;
+    }
   }
 
   .pagenation {
+    height: fit-content;
     display: flex;
     justify-content: center;
     margin-top: 20px;
