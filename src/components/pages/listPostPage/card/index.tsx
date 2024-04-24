@@ -1,0 +1,39 @@
+import dayjs, { Dayjs } from 'dayjs';
+import { ReactElement } from 'react';
+
+import styles from './index.module.scss';
+
+import CardLayout from '@/layouts/card';
+
+interface Props {
+  title: string;
+  content: string;
+  thumbnail?: string;
+  date: Dayjs;
+  link: string;
+}
+
+const defaultThumbnail = '/default/penguin.webp';
+
+const ListPostCard = (props: Props): ReactElement => {
+  const { title, content, thumbnail, date, link } = props;
+
+  return (
+    <CardLayout className={styles.card} link={link}>
+      <h3 className={styles.title}>{title}</h3>
+
+      <div className={styles.left}>
+        <div className={styles.content}>
+          <p>{content.slice(0, 150)}</p>
+        </div>
+        <p className={styles.date}>{dayjs(date).format('YYYY/MM/DD')}</p>
+      </div>
+
+      <div className={styles.right}>
+        <img src={thumbnail ?? defaultThumbnail} className={styles.thumbnail} alt="" />
+      </div>
+    </CardLayout>
+  );
+};
+
+export default ListPostCard;
