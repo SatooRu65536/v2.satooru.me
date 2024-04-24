@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 
 import styles from './index.module.scss';
 
-import ListItem from '@/components/shares/listitem';
+import ListItem from '@/components/shares/listItem';
 import { AWARD } from '@/const/awards';
 import SectionLayout from '@/layouts/section';
 

@@ -7,8 +7,8 @@ import { useCallback } from 'react';
 import ListPostCard from './card';
 import styles from './index.module.scss';
 
-import PostCategories from '@/components/shares/categories';
 import PageNation from '@/components/shares/pagenation';
+import PostCategories from '@/components/shares/categories';
 import { PER_PAGE } from '@/const/setting';
 import { GetArticle } from '@/utils/articles';
 

@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 
-import type { ListItemProps } from '@/components/shares/listitem';
+import type { ListItemProps } from '@/components/shares/listItem';
 
 export const AWARD: ListItemProps[] = [
   {
