@@ -20,7 +20,7 @@ const ProductsSection = (props: Props): ReactElement => {
           <ProductCard
             key={article.article.data.number}
             article={article}
-            link={`/post/${article.article.data.number}`}
+            link={`/posts/${article.article.data.number}`}
           />
         ))}
     </SectionLayout>

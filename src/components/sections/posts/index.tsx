@@ -23,7 +23,7 @@ const RecentPostsSection = (props: Props): ReactElement => {
             title={article.data.title}
             content={article.content}
             date={dayjs(postedAt)}
-            link={`/post/${article.data.number}`}
+            link={`/posts/${article.data.number}`}
           />
         ))}
     </SectionLayout>
