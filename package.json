@@ -54,10 +54,6 @@
     "storybook": "^8.0.5",
     "style-loader": "^4.0.0",
     "tsconfig-paths-webpack-plugin": "^4.1.0",
-    "typescript": "^5.4.3"
-  },
-  "volta": {
-    "node": "21.7.3",
-    "yarn": "1.22.22"
+    "typescript": "5.4.5"
   }
 }
