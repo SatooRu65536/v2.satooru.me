@@ -130,7 +130,7 @@ const getArticles = () => {
     return bDate.getTime() - aDate.getTime();
   });
 
-  const productArticles = sortedArticles.filter((article) => article.category === 'products');
+  const productArticles = sortedArticles.filter((article) => article.category === 'product');
 
   return { articles: sortedArticles, products: productArticles };
 };
