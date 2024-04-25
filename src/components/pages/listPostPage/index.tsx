@@ -20,7 +20,7 @@ interface Props {
 const ListPostPage = (props: Props) => {
   const { articles, category } = props;
 
-  const decodedCategory = category ? decodeURI(category): category;
+  const decodedCategory = category ? decodeURI(category) : category;
   const groupedArticles = Object.groupBy(articles, (article) => article.category);
 
   const searchParams = useSearchParams();

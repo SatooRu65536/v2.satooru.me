@@ -1,0 +1,31 @@
+import { Dayjs } from 'dayjs';
+import { ReactElement } from 'react';
+
+import styles from './index.module.scss';
+import ExperienceItem from './item';
+
+import { EXPERIENCES } from '@/const/experience';
+import SectionLayout from '@/layouts/section';
+
+export interface ExperienceProp {
+  description: string;
+  organization: string;
+  start: Dayjs;
+  end?: Dayjs;
+  location?: string;
+  overview: string;
+  url: string;
+  fill?: boolean;
+}
+
+const ExperiencesSection = (): ReactElement => {
+  return (
+    <SectionLayout title="Experiences" className={styles.experiences}>
+      {EXPERIENCES.map((experience) => {
+        return <ExperienceItem key={experience.description} experience={experience} />;
+      })}
+    </SectionLayout>
+  );
+};
+
+export default ExperiencesSection;
