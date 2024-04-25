@@ -31,7 +31,7 @@ const ExperienceItem = (props: Porps): ReactElement => {
             {experience.location && `, ${experience.location}`}
             {', '}
           </p>
-          <p className={styles.overview}>{experience.overview}</p>
+          {experience.overview && <p className={styles.overview}>{experience.overview}</p>}
         </div>
       </div>
     </div>

@@ -13,7 +13,7 @@ export interface ExperienceProp {
   start: Dayjs;
   end?: Dayjs;
   location?: string;
-  overview: string;
+  overview?: string;
   url: string;
   fill?: boolean;
 }
