@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.2.26",
+    "@cloudflare/next-on-pages": "^1.11.1",
     "@storybook/addon-essentials": "^8.0.5",
     "@storybook/addon-interactions": "^8.0.5",
     "@storybook/addon-links": "^8.0.5",
