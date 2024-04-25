@@ -8,7 +8,7 @@ import CardLayout from '@/layouts/card';
 interface Props {
   title: string;
   content: string;
-  thumbnail?: string;
+  thumbnail?: string | undefined;
   date: Dayjs;
   link: string;
 }

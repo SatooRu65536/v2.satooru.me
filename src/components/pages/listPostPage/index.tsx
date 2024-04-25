@@ -39,9 +39,7 @@ const ListPostPage = (props: Props) => {
     [decodedCategory],
   );
 
-  if (displayedArticles === undefined || displayedArticles.length === 0) {
-    return <div>記事はありません</div>;
-  }
+  const hasArticles = displayedArticles.length > 0;
 
   return (
     <div className={styles.container}>
@@ -51,15 +49,20 @@ const ListPostPage = (props: Props) => {
 
       <section className={styles.articles_wrapper}>
         <div className={styles.articles}>
-          {displayedArticles?.map((article) => (
-            <ListPostCard
-              key={article.data.number}
-              title={article.data.title}
-              content={article.content}
-              date={dayjs(article.postedAt)}
-              link={`/posts/${article.data.number}`}
-            />
-          ))}
+          {!hasArticles ? (
+            <p>記事はありません</p>
+          ) : (
+            displayedArticles.map((article) => (
+              <ListPostCard
+                key={article.data.number}
+                title={article.data.title}
+                content={article.content}
+                date={dayjs(article.postedAt)}
+                link={`/posts/${article.data.number}`}
+                thumbnail={article.thumbnail}
+              />
+            ))
+          )}
         </div>
       </section>
 

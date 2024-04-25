@@ -97,7 +97,7 @@ const getInfo = (content: string, header: string, level: number | undefined = un
 /**
  * 記事からサムネイルを取得する
  */
-export const getThumbnail = (content: string): string | undefined => {
+const getThumbnail = (content: string): string | undefined => {
   const match = content.match(FIRST_IMAGE_REGEX);
   const thumbnail = (match && (match[2] || match[3])) ?? undefined;
   return thumbnail;
@@ -109,7 +109,7 @@ export interface GetArticle {
   filePath: string;
   category: string;
   postedAt: string;
-  thumbnail?: string;
+  thumbnail: string | undefined;
 }
 
 /**
@@ -149,10 +149,8 @@ export interface Product {
  * 記事から product の情報を取り出す
  */
 export const toProduct = (article: GetArticle): Product => {
-  const { data, content } = article;
+  const { data, content, thumbnail } = article;
   const { title, tags } = data;
-
-  const thumbnail = getThumbnail(article.content);
 
   const tag = parseMetaTag(tags?.split(', '), 'type', 'その他');
 

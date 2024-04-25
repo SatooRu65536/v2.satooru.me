@@ -4,7 +4,7 @@ import styles from './index.module.scss';
 
 import Thumbnail from '@/components/shares/thumbnail';
 import ToHtml from '@/components/shares/toHtml';
-import { GetArticle, getThumbnail } from '@/utils/articles';
+import { GetArticle } from '@/utils/articles';
 
 interface Props {
   articles: GetArticle[];
@@ -20,14 +20,12 @@ const PostPage = (props: Props) => {
     return <div>記事が見つかりませんでした</div>;
   }
 
-  const thumbnail = getThumbnail(article.content);
-
   return (
     <div className={styles.post_container}>
       <h1 className={styles.title}>{article.data.title}</h1>
       <p className={styles.postedat}>{dayjs(article.postedAt).format('YYYY年MM月DD日')}</p>
 
-      <Thumbnail alt="thumbnail" height="300px" src={thumbnail ?? '/default/penguin.webp'} />
+      <Thumbnail alt="thumbnail" height="300px" src={article.thumbnail ?? '/default/penguin.webp'} />
 
       <ToHtml className={styles.content} content={article.content} />
     </div>
