@@ -25,7 +25,7 @@ export const Primary: Story = {
       category: 'product',
       filePath: 'articles/0.html.md',
       postedAt: '2021-09-01T00:00:00.000Z',
-      thumbnail: '/default/penguin.webp'
+      thumbnail: '/default/penguin.webp',
     },
   },
 };
