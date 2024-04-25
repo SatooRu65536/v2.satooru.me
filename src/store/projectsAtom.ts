@@ -1,6 +1,7 @@
 import { atom } from 'jotai';
 import { loadable } from 'jotai/utils';
-import { Project } from 'next/dist/build/swc';
+
+import { Project } from '@/fetcher/myprojects';
 
 const fetchProjects = async () => {
   const filteredProjects = await fetch('/api/projects')
