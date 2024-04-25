@@ -8,6 +8,9 @@ const nextConfig = {
       @import "@/styles/responsive.scss";
     `,
   },
+  experimental: {
+    runtime: 'edge',
+  },
 };
 
 export default nextConfig;
