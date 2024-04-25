@@ -22,7 +22,7 @@ const PageNation = (props: Props): ReactElement => {
   const displayPages = pages.slice(rangeMin, rangeMax);
 
   const isFirstPageDisplayed = displayPages.at(0) === pages.at(0);
-  const isLastPageDisplayed = displayPages.at(-1) === pages.at(1);
+  const isLastPageDisplayed = displayPages.at(-1) === pages.at(1) || displayPages.length === 1;
 
   return (
     <div className={styles.pagenation}>
