@@ -1,4 +1,4 @@
-import { Link } from 'next-view-transitions'
+import { Link } from 'next-view-transitions';
 import { ReactElement } from 'react';
 
 import styles from './index.module.scss';

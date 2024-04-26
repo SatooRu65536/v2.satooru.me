@@ -1,16 +1,13 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { ViewTransitions } from 'next-view-transitions';
 import { ReactNode } from 'react';
-
-import Providers from './providers';
 
 import { ABOUT } from '@/const/about';
 
 const inter = Inter({ subsets: ['latin'] });
 
-const HOST_NAME = 'https://satooru.me/';
-const SITE_NAME = "SatooRu's Profile";
+const HOST_NAME = 'https://satooru.me/404';
+const SITE_NAME = "404 | SatooRu's Profile";
 const KEY_WORDS = ['佐藤さとる', 'プロフィール', 'シス研', '愛知工業大学', '愛工大'];
 const DESCRIPTION = ABOUT.join('');
 
@@ -43,12 +40,8 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <ViewTransitions>
-      <html lang="ja">
-        <body className={inter.className}>
-          <Providers>{children}</Providers>
-        </body>
-      </html>
-    </ViewTransitions>
+    <html lang="ja">
+      <body className={inter.className}>{children}</body>
+    </html>
   );
 }
