@@ -7714,6 +7714,11 @@ neo-async@^2.5.0, neo-async@^2.6.2:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
+next-view-transitions@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/next-view-transitions/-/next-view-transitions-0.1.1.tgz#3d672f503984dca8645bf155e400ea5cf8ebc3ea"
+  integrity sha512-1rpXhWF8j0VJwJG52c8WeeAYpr1K7o3ub82lahbSoUwAry54TEm1d3mqBbSLLIMl85c3OewkZjxncTHwYFk+IA==
+
 next@14.1.4:
   version "14.1.4"
   resolved "https://registry.yarnpkg.com/next/-/next-14.1.4.tgz#203310f7310578563fd5c961f0db4729ce7a502d"

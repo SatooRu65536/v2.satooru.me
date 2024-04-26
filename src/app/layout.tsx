@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { ViewTransitions } from 'next-view-transitions';
 
 import Providers from './providers';
 
@@ -43,12 +44,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
-      <body className={inter.className}>
-        <Providers>
-          <PageLayout>{children}</PageLayout>
-        </Providers>
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="ja">
+        <body className={inter.className}>
+          <Providers>
+            <PageLayout>{children}</PageLayout>
+          </Providers>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }
