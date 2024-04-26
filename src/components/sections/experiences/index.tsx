@@ -19,9 +19,11 @@ export interface ExperienceProp {
 }
 
 const ExperiencesSection = (): ReactElement => {
+  const sortedExperiences = EXPERIENCES.sort((a, b) => a.start.diff(b.start));
+
   return (
     <SectionLayout title="Experiences" className={styles.experiences}>
-      {EXPERIENCES.map((experience) => {
+      {sortedExperiences.map((experience) => {
         return <ExperienceItem key={experience.description} experience={experience} />;
       })}
     </SectionLayout>
