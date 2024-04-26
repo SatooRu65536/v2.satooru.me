@@ -11,3 +11,8 @@ $fontsize-lg: 1.5rem;
 $fontsize-xl: 2rem;
 
 $transition: all 0.3s ease-in-out;
+
+$header-height: 70px;
+$footer-height: 44px;
+$main-padding-bottom: 50px;
+$main-height: calc(100vh - $header-height - $footer-height - $main-padding-bottom);
