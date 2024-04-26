@@ -17,7 +17,7 @@ export const EXPERIENCES: ExperienceProp[] = [
     description: '情報デザイン部 入部',
     organization: 'AMIDC',
     start: dayjs('2020.06.10'),
-    end: dayjs('2022.09.01'),
+    end: dayjs('2021.09.01'),
     location: '名電高校224教室',
     url: 'https://meidenid.com/',
   },
