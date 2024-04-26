@@ -2,9 +2,11 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ViewTransitions } from 'next-view-transitions';
 
-import Providers from './providers';
+import Providers from '../providers';
 
 import { ABOUT } from '@/const/about';
+import PageLayout from '@/layouts/page';
+import '@/styles/global.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -45,7 +47,9 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="ja">
         <body className={inter.className}>
-          <Providers>{children}</Providers>
+          <Providers>
+            <PageLayout>{children}</PageLayout>
+          </Providers>
         </body>
       </html>
     </ViewTransitions>
