@@ -6,7 +6,7 @@ import { ABOUT } from '@/const/about';
 
 const inter = Inter({ subsets: ['latin'] });
 
-const HOST_NAME = 'https://satooru.me/404';
+const HOST_NAME = 'https://satooru.me';
 const SITE_NAME = "404 | SatooRu's Profile";
 const KEY_WORDS = ['佐藤さとる', 'プロフィール', 'シス研', '愛知工業大学', '愛工大'];
 const DESCRIPTION = ABOUT.join('');
