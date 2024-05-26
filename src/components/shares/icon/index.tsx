@@ -34,6 +34,9 @@ import {
   SiEslint,
   SiStyledcomponents,
   SiDrizzle,
+  SiPlaywright,
+  SiVitest,
+  SiGit,
 } from '@icons-pack/react-simple-icons';
 import { ReactElement } from 'react';
 
@@ -48,6 +51,7 @@ export const IconMap = {
   electron: { name: 'Electron', icon: SiElectron },
   eslint: { name: 'ESLint', icon: SiEslint },
   firebase: { name: 'Firebase', icon: SiFirebase },
+  git: { name: 'Git', icon: SiGit },
   github: { name: 'GitHub', icon: SiGithub },
   hono: { name: 'Hono', icon: SiHono },
   html: { name: 'HTML', icon: SiHtml5 },
@@ -58,6 +62,7 @@ export const IconMap = {
   nestjs: { name: 'Nestjs', icon: SiNestjs },
   nextjs: { name: 'Next.js', icon: SiNextdotjs },
   node: { name: 'Node.js', icon: SiNodedotjs },
+  playwright: { name: 'Playwright', icon: SiPlaywright },
   prisma: { name: 'Prisma', icon: SiPrisma },
   python: { name: 'Python', icon: SiPython },
   python3: { name: 'Python', icon: SiPython },
@@ -73,6 +78,7 @@ export const IconMap = {
   tauri: { name: 'Tauri', icon: SiTauri },
   typescript: { name: 'TypeScript', icon: SiTypescript },
   vite: { name: 'Vite', icon: SiVite },
+  vitest: { name: 'Vitest', icon: SiVitest },
   x: { name: 'X', icon: SiX },
 } as const;
 
