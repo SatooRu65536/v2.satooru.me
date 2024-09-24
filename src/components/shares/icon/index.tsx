@@ -37,6 +37,9 @@ import {
   SiPlaywright,
   SiVitest,
   SiGit,
+  SiPostgresql,
+  SiFastapi,
+  SiTrpc,
 } from '@icons-pack/react-simple-icons';
 import { ReactElement } from 'react';
 
@@ -50,6 +53,7 @@ export const IconMap = {
   'drizzle-orm': { name: 'Drizzle ORM', icon: SiDrizzle },
   electron: { name: 'Electron', icon: SiElectron },
   eslint: { name: 'ESLint', icon: SiEslint },
+  fastapi: { name: 'FastAPI', icon: SiFastapi },
   firebase: { name: 'Firebase', icon: SiFirebase },
   git: { name: 'Git', icon: SiGit },
   github: { name: 'GitHub', icon: SiGithub },
@@ -59,6 +63,7 @@ export const IconMap = {
   jest: { name: 'Jest', icon: SiJest },
   mantine: { name: 'Mantine', icon: SiMantine },
   mysql: { name: 'MySQL', icon: SiMysql },
+  postgresql: { name: 'PostgreSQL', icon: SiPostgresql },
   nestjs: { name: 'Nestjs', icon: SiNestjs },
   nextjs: { name: 'Next.js', icon: SiNextdotjs },
   node: { name: 'Node.js', icon: SiNodedotjs },
@@ -77,6 +82,7 @@ export const IconMap = {
   svelte: { name: 'Svelte', icon: SiSvelte },
   tauri: { name: 'Tauri', icon: SiTauri },
   typescript: { name: 'TypeScript', icon: SiTypescript },
+  trpc: { name: 'trpc', icon: SiTrpc },
   vite: { name: 'Vite', icon: SiVite },
   vitest: { name: 'Vitest', icon: SiVitest },
   x: { name: 'X', icon: SiX },
