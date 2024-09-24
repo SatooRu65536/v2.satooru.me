@@ -69,4 +69,11 @@ export const AWARD: ListItemProps[] = [
     description: 'Wi-Fiを使った混雑を知れるアプリ',
     link: '/posts/68',
   },
+  {
+    date: dayjs('2024-09-24'),
+    title: 'Open hack U 2024 KANAZAWA',
+    type: 'Happy Hacking賞',
+    description: '初心者が音楽制作の第一歩を踏み出せるアプリ',
+    link: '/posts/139',
+  },
 ];
