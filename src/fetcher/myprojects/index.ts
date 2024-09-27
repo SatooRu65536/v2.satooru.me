@@ -3,6 +3,12 @@ import dayjs from 'dayjs';
 import { IconKey, IconMap } from '@/components/shares/icon';
 import { getKeys } from '@/utils';
 
+interface GitHubEvent {
+  repo: {
+    url: string;
+  };
+}
+
 interface GitHubRepo {
   name: string;
   description: string;
@@ -12,8 +18,6 @@ interface GitHubRepo {
   html_url: string;
   homepage: string;
 }
-
-type GetGitHubRepos = GitHubRepo[];
 
 export interface Project {
   name: string;
@@ -25,37 +29,43 @@ export interface Project {
 }
 
 export const fetchMyProjects = async () => {
-  const url = process.env.NEXT_PUBLIC_GITHUB_REPOS_URL;
+  const eventsUrl = process.env.GITHUB_EVENTS_URL;
 
-  if (url === undefined) {
+  if (eventsUrl === undefined) {
     throw new Error('GITHUB_API_URL is not defined');
   }
 
-  const projects = await fetch(url)
-    .then((res) => res.json() as Promise<GetGitHubRepos>)
-    .then((repos) => {
-      const projects: Project[] = repos.map((repo) => {
-        const tags = repo.topics.map((t) => t.toLowerCase());
-        const iconKeys: IconKey[] = getKeys(IconMap);
+  const repoUrls: string[] = await fetch(eventsUrl)
+    .then((res) => res.json() as Promise<GitHubEvent[]>)
+    .then((events) => events.map((event) => event.repo.url))
+    .catch(() => []);
 
-        const matchedTags = tags.filter((tag) => iconKeys.includes(tag as IconKey)) as IconKey[];
+  const uniqueRepoUrls = Array.from(new Set(repoUrls));
 
-        const { name } = repo;
-        const summary = repo.description;
-        const repository = repo.html_url;
-        const site = repo.homepage;
-        const updatedAt = repo.pushed_at;
-        return { name, summary, tags: matchedTags, repository, site, updatedAt };
-      });
+  const projects: Project[] = (
+    await Promise.all(
+      uniqueRepoUrls.map((url) =>
+        fetch(url)
+          .then((res) => res.json() as Promise<GitHubRepo>)
+          .then((repo) => {
+            const tags = repo.topics.map((t) => t.toLowerCase());
+            const iconKeys: IconKey[] = getKeys(IconMap);
 
-      return projects;
-    })
-    .catch((err) => {
-      console.error(err);
-      const projects: Project[] = [];
-      return projects;
-    });
+            const matchedTags = tags.filter((tag) => iconKeys.includes(tag as IconKey)) as IconKey[];
 
-  const filteredProjects = projects.filter((project) => dayjs(project.updatedAt).isAfter(dayjs().subtract(2, 'week')));
-  return filteredProjects;
+            const { name } = repo;
+            const summary = repo.description;
+            const repository = repo.html_url;
+            const site = repo.homepage;
+            const updatedAt = repo.pushed_at;
+            return { name, summary, tags: matchedTags, repository, site, updatedAt };
+          })
+          .catch(() => undefined),
+      ),
+    )
+  ).filter((r) => r !== undefined);
+
+  const filteredProjects = projects.filter((p) => dayjs(p.updatedAt).isAfter(dayjs().subtract(2, 'week')));
+  const uniqueProjects = filteredProjects.filter((p, i, self) => self.findIndex((s) => s.name === p.name) === i);
+  return uniqueProjects;
 };
