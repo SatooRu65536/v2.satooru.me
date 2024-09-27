@@ -17,7 +17,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@icons-pack/react-simple-icons": "^9.4.0",
+    "@icons-pack/react-simple-icons": "10",
     "dayjs": "^1.11.10",
     "gray-matter": "^4.0.3",
     "jotai": "^2.8.0",
