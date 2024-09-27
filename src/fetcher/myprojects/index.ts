@@ -42,30 +42,28 @@ export const fetchMyProjects = async () => {
 
   const uniqueRepoUrls = Array.from(new Set(repoUrls));
 
-  const projects: Project[] = (
-    await Promise.all(
-      uniqueRepoUrls.map((url) =>
-        fetch(url)
-          .then((res) => res.json() as Promise<GitHubRepo>)
-          .then((repo) => {
-            const tags = repo.topics.map((t) => t.toLowerCase());
-            const iconKeys: IconKey[] = getKeys(IconMap);
+  const projects = await Promise.all(
+    uniqueRepoUrls.map((url) =>
+      fetch(url)
+        .then((res) => res.json() as Promise<GitHubRepo>)
+        .then((repo) => {
+          const tags = repo.topics.map((t) => t.toLowerCase());
+          const iconKeys: IconKey[] = getKeys(IconMap);
 
-            const matchedTags = tags.filter((tag) => iconKeys.includes(tag as IconKey)) as IconKey[];
+          const matchedTags = tags.filter((tag) => iconKeys.includes(tag as IconKey)) as IconKey[];
 
-            const { name } = repo;
-            const summary = repo.description;
-            const repository = repo.html_url;
-            const site = repo.homepage;
-            const updatedAt = repo.pushed_at;
-            return { name, summary, tags: matchedTags, repository, site, updatedAt };
-          })
-          .catch(() => undefined),
-      ),
-    )
-  ).filter((r) => r !== undefined);
+          const { name } = repo;
+          const summary = repo.description;
+          const repository = repo.html_url;
+          const site = repo.homepage;
+          const updatedAt = repo.pushed_at;
+          return { name, summary, tags: matchedTags, repository, site, updatedAt };
+        })
+        .catch(() => undefined),
+    ),
+  );
 
-  const filteredProjects = projects.filter((p) => dayjs(p.updatedAt).isAfter(dayjs().subtract(2, 'week')));
-  const uniqueProjects = filteredProjects.filter((p, i, self) => self.findIndex((s) => s.name === p.name) === i);
+  const filteredProjects = projects.filter((p) => dayjs(p?.updatedAt).isAfter(dayjs().subtract(2, 'week')));
+  const uniqueProjects = filteredProjects.filter((p, i, self) => self.findIndex((s) => s?.name === p?.name) === i);
   return uniqueProjects;
 };
