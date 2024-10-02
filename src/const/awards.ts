@@ -63,7 +63,7 @@ export const AWARD: ListItemProps[] = [
     link: '/posts/63',
   },
   {
-    date: dayjs('2023-09-02'),
+    date: dayjs('2023-10-02'),
     title: '工科展',
     type: '優秀賞',
     description: 'Wi-Fiを使った混雑を知れるアプリ',
