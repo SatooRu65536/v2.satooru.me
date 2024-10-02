@@ -8,7 +8,7 @@ import SectionLayout from '@/layouts/section';
 
 const AwardsSection = (): ReactElement => {
   return (
-    <SectionLayout title="Awards" leftSpace>
+    <SectionLayout title="Awards" center>
       <ul className={styles.award}>
         {AWARD.map((award) => (
           <ListItem key={award.title} {...award} />

@@ -15,41 +15,6 @@
     align-items: center;
     position: relative;
 
-    @include pc {
-      margin-right: 50px;
-
-      &:nth-child(2n - 1) {
-        .circle_container {
-          margin-left: 400px;
-        }
-
-        .box {
-          .content {
-            width: 400px;
-          }
-        }
-      }
-
-      &:nth-child(2n) {
-        .circle_container {
-          order: 2;
-        }
-
-        .box {
-          order: 1;
-          width: 400px;
-          text-align: end;
-
-          .content {
-            width: fit-content;
-            padding-right: 50px;
-            margin-left: auto;
-            text-align: start;
-          }
-        }
-      }
-    }
-
     .circle {
       width: 20px;
       height: 20px;
@@ -71,6 +36,41 @@
       background-color: $accent-color;
       position: absolute;
       bottom: -100px;
+    }
+  }
+
+  @include pc {
+    margin-right: 50px;
+
+    &:nth-child(2n - 1) {
+      .circle_container {
+        margin-left: 400px;
+      }
+
+      .box {
+        .content {
+          width: 400px;
+        }
+      }
+    }
+
+    &:nth-child(2n) {
+      .circle_container {
+        order: 2;
+      }
+
+      .box {
+        order: 1;
+        width: 400px;
+        text-align: end;
+
+        .content {
+          width: fit-content;
+          padding-right: 50px;
+          margin-left: auto;
+          text-align: start;
+        }
+      }
     }
   }
 

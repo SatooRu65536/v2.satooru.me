@@ -22,7 +22,7 @@ const ExperiencesSection = (): ReactElement => {
   const sortedExperiences = EXPERIENCES.sort((a, b) => a.start.diff(b.start));
 
   return (
-    <SectionLayout title="Experiences" className={styles.experiences}>
+    <SectionLayout title="Experiences" className={styles.experiences} leftSpace>
       {sortedExperiences.map((experience) => {
         return <ExperienceItem key={experience.description} experience={experience} />;
       })}

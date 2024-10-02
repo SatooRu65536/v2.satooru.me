@@ -6,12 +6,13 @@ interface Props {
   children: ReactNode;
   title?: string | ReactElement;
   leftSpace?: boolean;
+  center?: boolean;
   underline?: boolean;
   className?: string;
 }
 
 const SectionLayout = (props: Props): ReactElement => {
-  const { children, title, leftSpace, underline, className } = props;
+  const { children, center, title, leftSpace, underline, className } = props;
 
   return (
     <section className={styles.section}>
@@ -19,7 +20,7 @@ const SectionLayout = (props: Props): ReactElement => {
         {typeof title === 'string' ? <h1>{title}</h1> : title}
       </div>
 
-      <div className={`${styles.content} ${className}`} data-leftspace={leftSpace}>
+      <div className={`${styles.content} ${className}`} data-leftspace={leftSpace} data-center={center}>
         {children}
       </div>
     </section>
