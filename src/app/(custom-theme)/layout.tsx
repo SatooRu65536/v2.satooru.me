@@ -1,12 +1,14 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { ReactNode } from 'react';
+import { ViewTransitions } from 'next-view-transitions';
+
 import { ABOUT } from '@/const/about';
+import '@/styles/global.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
-const HOST_NAME = 'https://satooru.me';
-const SITE_NAME = "404 | SatooRu's Profile";
+const HOST_NAME = 'https://satooru.me/';
+const SITE_NAME = "SatooRu's Profile";
 const KEY_WORDS = ['佐藤さとる', 'プロフィール', 'シス研', '愛知工業大学', '愛工大'];
 const DESCRIPTION = ABOUT.join('');
 
@@ -36,11 +38,13 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: ReactNode;
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <ViewTransitions>
+      <html lang="ja">
+        <body className={inter.className}>{children}</body>
+      </html>
+    </ViewTransitions>
   );
 }

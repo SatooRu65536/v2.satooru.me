@@ -6,11 +6,16 @@ import styles from './index.module.scss';
 const LINKS = [
   { title: 'Home', href: '/' },
   { title: 'Posts', href: '/posts' },
+  { title: 'Map', href: '/map' },
 ];
 
-const Header = (): ReactElement => {
+interface Props {
+  fixed?: boolean;
+}
+
+const Header = ({ fixed }: Props): ReactElement => {
   return (
-    <header className={styles.header}>
+    <header className={styles.header} data-fixed={fixed}>
       <img src="/icon.webp" alt="アイコン" className={styles.icon} />
       <h3 className={styles.title}>佐藤さとる</h3>
 
