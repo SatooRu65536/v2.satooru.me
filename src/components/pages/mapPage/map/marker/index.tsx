@@ -11,7 +11,7 @@ interface Props {
   place: Place;
 }
 
-const getHtml = (name: string, visitDate: string) => {
+const getHtml = (name: string, visitDate: string | undefined) => {
   return `<h2>${name}</h2>`;
 };
 
