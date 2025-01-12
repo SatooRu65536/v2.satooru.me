@@ -12,7 +12,7 @@ const LinksSection = (): ReactElement => {
         {LINKS.map((link) => (
           <p key={link.link}>
             <a href={link.link} target="_blank">
-              <Icon iconKey={link.iconKey} className={styles.icon} />
+              <Icon iconKey={link.iconKey} className={styles.icon} color="black" />
               <span>{link.name}</span>
             </a>
           </p>
