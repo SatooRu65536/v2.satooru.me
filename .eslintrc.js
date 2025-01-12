@@ -37,7 +37,6 @@ module.exports = {
         alphabetize: {
           order: 'asc',
         },
-        'newlines-between': 'always',
       },
     ],
     // 親ディレクトリからのimportを禁止

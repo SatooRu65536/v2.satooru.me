@@ -1,5 +1,6 @@
-import MapPage from '@/components/pages/mapPage';
 import { ReactElement } from 'react';
+
+import MapPage from '@/components/pages/mapPage';
 
 const Page = (): ReactElement => {
   return <MapPage />;

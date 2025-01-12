@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
+
 import { ABOUT } from '@/const/about';
 
 const inter = Inter({ subsets: ['latin'] });

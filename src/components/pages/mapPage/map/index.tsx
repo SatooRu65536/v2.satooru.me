@@ -1,12 +1,12 @@
 'use client';
 
-import * as React from 'react';
 import { MapLayerMouseEvent, Map as MapLibre } from '@vis.gl/react-maplibre';
+import * as React from 'react';
+import { ReactElement, useCallback } from 'react';
 import styles from './index.module.scss';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import { ReactElement, useCallback } from 'react';
-import { Place } from '@/types';
 import Marker from './marker';
+import { Place } from '@/types';
 
 export type Markers = Record<string, Place[]>;
 
