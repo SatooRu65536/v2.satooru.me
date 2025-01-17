@@ -1,9 +1,10 @@
-import dayjs, { Dayjs } from 'dayjs';
-import { ReactElement } from 'react';
+import type { Dayjs } from 'dayjs';
+import type { ReactElement } from 'react';
+import CardLayout from '@/layouts/card';
+
+import dayjs from 'dayjs';
 
 import styles from './index.module.scss';
-
-import CardLayout from '@/layouts/card';
 
 interface Props {
   title: string;
@@ -15,7 +16,7 @@ interface Props {
 
 const defaultThumbnail = '/default/penguin.webp';
 
-const PostCard = (props: Props): ReactElement => {
+function PostCard(props: Props): ReactElement {
   const { title, content, thumbnail, date, link } = props;
 
   return (
@@ -30,10 +31,10 @@ const PostCard = (props: Props): ReactElement => {
       </div>
 
       <div className={styles.right}>
-        <img src={thumbnail ?? defaultThumbnail} className={styles.thumbnail} alt="" />
+        <img alt="" className={styles.thumbnail} src={thumbnail ?? defaultThumbnail} />
       </div>
     </CardLayout>
   );
-};
+}
 
 export default PostCard;

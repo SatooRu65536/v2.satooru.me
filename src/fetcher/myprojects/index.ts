@@ -1,7 +1,8 @@
-import dayjs from 'dayjs';
+import type { IconKey } from '@/components/shares/icon';
+import { IconMap } from '@/components/shares/icon';
 
-import { IconKey, IconMap } from '@/components/shares/icon';
 import { getKeys } from '@/utils';
+import dayjs from 'dayjs';
 
 interface GitHubEvent {
   repo: {
@@ -28,7 +29,7 @@ export interface Project {
   updatedAt: string;
 }
 
-export const fetchMyProjects = async () => {
+export async function fetchMyProjects() {
   const eventsUrl = process.env.GITHUB_EVENTS_URL;
 
   if (eventsUrl === undefined) {
@@ -66,4 +67,4 @@ export const fetchMyProjects = async () => {
   const filteredProjects = projects.filter((p) => dayjs(p?.updatedAt).isAfter(dayjs().subtract(2, 'week')));
   const uniqueProjects = filteredProjects.filter((p, i, self) => self.findIndex((s) => s?.name === p?.name) === i);
   return uniqueProjects;
-};
+}

@@ -1,4 +1,4 @@
-import { Place } from '@/types';
+import type { Place } from '@/types';
 
 export const castles: Place[] = [
   // 宮城
@@ -66,7 +66,7 @@ export const castles: Place[] = [
   { name: '墨俣城', latitude: 35.367299, longitude: 136.687588, visitDate: undefined },
   { name: '岩村城', latitude: 35.360021, longitude: 137.451323, visitDate: undefined },
   { name: '苗木城', latitude: 35.513345, longitude: 137.485065, visitDate: undefined },
-  { name: '郡上八幡城', latitude: 35.752416, longitude: 136.961358, visitDate: undefined, },
+  { name: '郡上八幡城', latitude: 35.752416, longitude: 136.961358, visitDate: undefined },
 
   // 滋賀
   { name: '彦根城', latitude: 35.276426, longitude: 136.252416, visitDate: undefined },
@@ -125,7 +125,7 @@ export const castles: Place[] = [
   { name: '高松城', latitude: 34.350051, longitude: 134.050135, visitDate: undefined },
   { name: '丸亀城', latitude: 34.286441, longitude: 133.80019, visitDate: undefined },
   { name: '勝瑞城', latitude: 34.131983, longitude: 134.52294, visitDate: undefined },
-  { name: '引田城', latitude: 34.23329, longitude: 134.408916, visitDate: undefined, },
+  { name: '引田城', latitude: 34.23329, longitude: 134.408916, visitDate: undefined },
 
   // 徳島
   { name: '徳島城', latitude: 34.075323, longitude: 134.554646, visitDate: undefined },
@@ -145,7 +145,7 @@ export const castles: Place[] = [
   // 福岡
   { name: '小倉城', latitude: 33.884391, longitude: 130.874243, visitDate: undefined },
   { name: '福岡城', latitude: 33.584387, longitude: 130.383092, visitDate: undefined },
-  { name: '水城', latitude: 33.521128, longitude: 130.497253, visitDate: undefined, },
+  { name: '水城', latitude: 33.521128, longitude: 130.497253, visitDate: undefined },
 
   // 佐賀
   { name: '佐賀城', latitude: 33.245201, longitude: 130.302671, visitDate: undefined },

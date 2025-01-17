@@ -1,15 +1,15 @@
-import { ReactElement, ReactNode } from 'react';
-
-import styles from './index.module.scss';
+import type { ReactElement, ReactNode } from 'react';
 
 import Footer from '@/components/bases/footer';
+
 import Header from '@/components/bases/header';
+import styles from './index.module.scss';
 
 interface Props {
   children: ReactNode;
 }
 
-const PageLayout = (props: Props): ReactElement => {
+function PageLayout(props: Props): ReactElement {
   const { children } = props;
 
   return (
@@ -19,6 +19,6 @@ const PageLayout = (props: Props): ReactElement => {
       <Footer />
     </>
   );
-};
+}
 
 export default PageLayout;

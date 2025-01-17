@@ -1,5 +1,5 @@
+import type { ReactElement } from 'react';
 import { Link } from 'next-view-transitions';
-import { ReactElement } from 'react';
 
 import styles from './index.module.scss';
 
@@ -8,23 +8,23 @@ interface Props {
   currentCategory?: string;
 }
 
-const PostCategories = (props: Props): ReactElement => {
+function PostCategories(props: Props): ReactElement {
   const { categories, currentCategory } = props;
 
   return (
     <div className={styles.container}>
       {Array.from(categories).map((category) => (
         <Link
-          key={category}
-          href={`/posts/${category}`}
           className={styles.link}
           data-selected={category === currentCategory}
+          href={`/posts/${category}`}
+          key={category}
         >
           {category}
         </Link>
       ))}
     </div>
   );
-};
+}
 
 export default PostCategories;

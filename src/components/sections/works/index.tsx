@@ -1,18 +1,18 @@
-import { ReactElement } from 'react'
-import styles from './index.module.scss';
+import type { ReactElement } from 'react';
+import { FadeIn, FadeInWithStagger } from '@/components/shares/fadein';
 import ListItem from '@/components/shares/listItem';
 import { WORKS } from '@/const/works';
 import SectionLayout from '@/layouts/section';
-import { FadeIn, FadeInWithStagger } from '@/components/shares/fadein';
 import { hash } from 'ohash';
+import styles from './index.module.scss';
 
-const WorksSection = (): ReactElement => {
+function WorksSection(): ReactElement {
   return (
-    <SectionLayout title="Works" center>
+    <SectionLayout center title="Works">
       <FadeInWithStagger>
         <ul className={styles.works}>
           {WORKS.map((work) => (
-            <FadeIn key={hash(work)} direction="left">
+            <FadeIn direction="left" key={hash(work)}>
               <ListItem {...work} />
             </FadeIn>
           ))}
@@ -20,6 +20,6 @@ const WorksSection = (): ReactElement => {
       </FadeInWithStagger>
     </SectionLayout>
   );
-};
+}
 
 export default WorksSection;

@@ -1,16 +1,16 @@
 'use client';
 
+import type { ReactElement, ReactNode } from 'react';
 import { Provider } from 'jotai';
-import { ReactElement, ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
 }
 
-const Providers = (props: Props): ReactElement => {
+function Providers(props: Props): ReactElement {
   const { children } = props;
 
   return <Provider>{children}</Provider>;
-};
+}
 
 export default Providers;

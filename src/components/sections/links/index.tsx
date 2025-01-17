@@ -1,18 +1,18 @@
-import { ReactElement } from 'react';
-import styles from './index.module.scss';
+import type { ReactElement } from 'react';
+import { FadeIn, FadeInWithStagger } from '@/components/shares/fadein';
 import Icon from '@/components/shares/icon';
 import { LINKS } from '@/const/links';
-import { FadeIn, FadeInWithStagger } from '@/components/shares/fadein';
+import styles from './index.module.scss';
 
-const LinksSection = (): ReactElement => {
+function LinksSection(): ReactElement {
   return (
     <section className={styles.links}>
       <FadeInWithStagger>
         {LINKS.map((link) => (
-          <FadeIn key={link.link} direction="left">
+          <FadeIn direction="left" key={link.link}>
             <p>
               <a href={link.link} target="_blank">
-                <Icon iconKey={link.iconKey} className={styles.icon} color="black" />
+                <Icon className={styles.icon} color="black" iconKey={link.iconKey} />
                 <span>{link.name}</span>
               </a>
             </p>
@@ -21,6 +21,6 @@ const LinksSection = (): ReactElement => {
       </FadeInWithStagger>
     </section>
   );
-};
+}
 
 export default LinksSection;

@@ -1,9 +1,9 @@
+import type { ReactElement } from 'react';
+import { PER_PAGE } from '@/const/setting';
+
 import { Link } from 'next-view-transitions';
-import { ReactElement } from 'react';
 
 import styles from './index.module.scss';
-
-import { PER_PAGE } from '@/const/setting';
 
 interface Props {
   totalArticles: number;
@@ -13,7 +13,7 @@ interface Props {
 
 const DISPLAY_PAGE_RANGE = 2;
 
-const PageNation = (props: Props): ReactElement => {
+function PageNation(props: Props): ReactElement {
   const { totalArticles, currentPage, pageTo } = props;
 
   const pages = Array.from({ length: Math.ceil(totalArticles / PER_PAGE) }, (_, i) => i + 1);
@@ -29,10 +29,10 @@ const PageNation = (props: Props): ReactElement => {
       {!isFirstPageDisplayed && (
         <>
           <Link
-            key={pages.at(0)}
-            href={pageTo(pages.at(0) ?? 1)}
             className={styles.page_link}
             data-current={currentPage === pages.at(0)}
+            href={pageTo(pages.at(0) ?? 1)}
+            key={pages.at(0)}
           >
             {pages.at(0)}
           </Link>
@@ -42,7 +42,7 @@ const PageNation = (props: Props): ReactElement => {
       )}
 
       {displayPages.map((page) => (
-        <Link key={page} href={pageTo(page)} className={styles.page_link} data-current={page === currentPage}>
+        <Link className={styles.page_link} data-current={page === currentPage} href={pageTo(page)} key={page}>
           {page}
         </Link>
       ))}
@@ -52,10 +52,10 @@ const PageNation = (props: Props): ReactElement => {
           <div className={styles.leader}>•••</div>
 
           <Link
-            key={pages.at(-1)}
-            href={pageTo(pages.at(-1) ?? 1)}
             className={styles.page_link}
             data-current={currentPage === pages.at(-1)}
+            href={pageTo(pages.at(-1) ?? 1)}
+            key={pages.at(-1)}
           >
             {pages.at(-1)}
           </Link>
@@ -63,6 +63,6 @@ const PageNation = (props: Props): ReactElement => {
       )}
     </div>
   );
-};
+}
 
 export default PageNation;

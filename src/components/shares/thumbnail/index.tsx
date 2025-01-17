@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 
 import styles from './index.module.scss';
 
@@ -9,14 +9,14 @@ interface Props {
   hovered?: boolean;
 }
 
-const Thumbnail = (props: Props): ReactElement => {
+function Thumbnail(props: Props): ReactElement {
   const { src, alt, height, hovered = false } = props;
 
   return (
     <div className={styles.thumbnail} style={{ height }}>
-      <img src={src} alt={alt} className={styles.image} data-hovered={hovered} />
+      <img alt={alt} className={styles.image} data-hovered={hovered} src={src} />
     </div>
   );
-};
+}
 
 export default Thumbnail;

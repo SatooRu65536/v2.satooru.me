@@ -1,6 +1,6 @@
-import dayjs from 'dayjs';
+import type { ExperienceProp } from '@/components/sections/experiences';
 
-import { ExperienceProp } from '@/components/sections/experiences';
+import dayjs from 'dayjs';
 
 export const EXPERIENCES: ExperienceProp[] = [
   {

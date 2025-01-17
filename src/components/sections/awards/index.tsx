@@ -1,22 +1,22 @@
-import { ReactElement } from 'react';
-import styles from './index.module.scss';
+import type { ReactElement } from 'react';
+import { FadeIn } from '@/components/shares/fadein';
 import ListItem from '@/components/shares/listItem';
 import { AWARD } from '@/const/awards';
 import SectionLayout from '@/layouts/section';
-import { FadeIn } from '@/components/shares/fadein';
+import styles from './index.module.scss';
 
-const AwardsSection = (): ReactElement => {
+function AwardsSection(): ReactElement {
   return (
-    <SectionLayout title="Awards" center>
+    <SectionLayout center title="Awards">
       <ul className={styles.award}>
         {AWARD.map((award) => (
-          <FadeIn key={award.title} direction='left'>
+          <FadeIn direction="left" key={award.title}>
             <ListItem {...award} />
           </FadeIn>
         ))}
       </ul>
     </SectionLayout>
   );
-};
+}
 
 export default AwardsSection;

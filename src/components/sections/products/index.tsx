@@ -1,29 +1,29 @@
-import { ReactElement } from 'react';
+import type { GetArticle } from '@/utils/articles';
+import type { ReactElement } from 'react';
+import { FadeIn, FadeInWithStagger } from '@/components/shares/fadein';
+import SectionLayout from '@/layouts/section';
 import ProductCard from './card';
 import styles from './index.module.scss';
-import SectionLayout from '@/layouts/section';
-import { GetArticle } from '@/utils/articles';
-import { FadeIn, FadeInWithStagger } from '@/components/shares/fadein';
 
 interface Props {
   articles: GetArticle[] | undefined;
 }
 
-const ProductsSection = (props: Props): ReactElement => {
+function ProductsSection(props: Props): ReactElement {
   const { articles } = props;
 
   return (
     <SectionLayout title="Products">
       <FadeInWithStagger className={styles.products}>
-        {articles &&
-          articles.map((article) => (
-            <FadeIn key={article.data.number} className={styles.fade}>
-              <ProductCard article={article} link={`/posts/${article.data.number}`} />
-            </FadeIn>
-          ))}
+        {articles
+        && articles.map((article) => (
+          <FadeIn className={styles.fade} key={article.data.number}>
+            <ProductCard article={article} link={`/posts/${article.data.number}`} />
+          </FadeIn>
+        ))}
       </FadeInWithStagger>
     </SectionLayout>
   );
-};
+}
 
 export default ProductsSection;

@@ -1,12 +1,14 @@
 'use client';
 
-import { MapLayerMouseEvent, Map as MapLibre } from '@vis.gl/react-maplibre';
+import type { Place } from '@/types';
+import type { MapLayerMouseEvent } from '@vis.gl/react-maplibre';
+import type { ReactElement } from 'react';
+import { Map as MapLibre } from '@vis.gl/react-maplibre';
 import * as React from 'react';
-import { ReactElement, useCallback } from 'react';
+import { useCallback } from 'react';
 import styles from './index.module.scss';
-import 'maplibre-gl/dist/maplibre-gl.css';
 import Marker from './marker';
-import { Place } from '@/types';
+import 'maplibre-gl/dist/maplibre-gl.css';
 
 export type Markers = Record<string, Place[]>;
 
@@ -14,32 +16,26 @@ interface Props {
   markers: Markers;
 }
 
-const Map = ({ markers }: Props): ReactElement => {
-  const handleRightClick = useCallback((e: MapLayerMouseEvent) => {
-    console.log(`{
-  name: '',
-  latitude: ${e.lngLat.lat},
-  longitude: ${e.lngLat.lng},
-  visitDate: '年月日',
-},`);
+function Map({ markers }: Props): ReactElement {
+  const handleRightClick = useCallback((_e: MapLayerMouseEvent) => {
   }, []);
 
   return (
     <MapLibre
+      className={styles.map}
       initialViewState={{
         longitude: 136.899049,
         latitude: 35.185731,
         zoom: 7,
       }}
-      onContextMenu={handleRightClick}
-      className={styles.map}
       mapStyle="/map/style.json"
+      onContextMenu={handleRightClick}
     >
       {Object.entries(markers).map(([type, ms]) =>
         ms.map((m) => <Marker key={`${type}-${m.name}`} place={m} type={type} />),
       )}
     </MapLibre>
   );
-};
+}
 
 export default Map;

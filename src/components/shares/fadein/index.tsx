@@ -1,7 +1,8 @@
 'use client';
 
+import type { ComponentPropsWithoutRef } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import React, { ComponentPropsWithoutRef, createContext, useContext, useMemo } from 'react';
+import React, { createContext, useContext, useMemo } from 'react';
 
 const StaggerContext = createContext(false);
 const viewport = { once: true, margin: '0px 0px -120px' };
@@ -10,7 +11,7 @@ interface FadeInProps extends ComponentPropsWithoutRef<typeof motion.div> {
   direction?: 'left' | 'up';
 }
 
-export const FadeIn = ({ direction, ...props }: FadeInProps) => {
+export function FadeIn({ direction, ...props }: FadeInProps) {
   const shouldReduceMotion = useReducedMotion();
   const isStagger = useContext(StaggerContext);
 
@@ -19,7 +20,7 @@ export const FadeIn = ({ direction, ...props }: FadeInProps) => {
       return {
         hidden: {
           opacity: 0,
-          x: shouldReduceMotion ? 0 : 20,
+          x: shouldReduceMotion === true ? 0 : 20,
         },
         visible: {
           opacity: 1,
@@ -31,14 +32,14 @@ export const FadeIn = ({ direction, ...props }: FadeInProps) => {
     return {
       hidden: {
         opacity: 0,
-        y: shouldReduceMotion ? 0 : 20,
+        y: shouldReduceMotion === true ? 0 : 20,
       },
       visible: {
         opacity: 1,
         y: 0,
       },
     };
-  }, [direction]);
+  }, [direction, shouldReduceMotion]);
 
   return (
     <motion.div
@@ -54,16 +55,16 @@ export const FadeIn = ({ direction, ...props }: FadeInProps) => {
       {...props}
     />
   );
-};
+}
 
-export const FadeInWithStagger = ({
+export function FadeInWithStagger({
   slow = false,
   speed,
   ...props
 }: ComponentPropsWithoutRef<typeof motion.div> & {
   slow?: boolean;
   speed?: number;
-}) => {
+}) {
   return (
     <StaggerContext.Provider value>
       <motion.div
@@ -77,4 +78,4 @@ export const FadeInWithStagger = ({
       />
     </StaggerContext.Provider>
   );
-};
+}

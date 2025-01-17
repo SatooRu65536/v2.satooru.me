@@ -1,10 +1,11 @@
-import { Dayjs } from 'dayjs';
-import { ReactElement } from 'react';
+import type { Dayjs } from 'dayjs';
+import type { ReactElement } from 'react';
 
-import styles from './index.module.scss';
-import ExperienceItem from './item';
 import { EXPERIENCES } from '@/const/experience';
 import SectionLayout from '@/layouts/section';
+import { hash } from 'ohash';
+import styles from './index.module.scss';
+import ExperienceItem from './item';
 
 export interface ExperienceProp {
   description: string;
@@ -17,16 +18,14 @@ export interface ExperienceProp {
   fill?: boolean;
 }
 
-const ExperiencesSection = (): ReactElement => {
+function ExperiencesSection(): ReactElement {
   const sortedExperiences = EXPERIENCES.sort((a, b) => a.start.diff(b.start));
 
   return (
-    <SectionLayout title="Experiences" className={styles.experiences} leftSpace>
-      {sortedExperiences.map((experience) => {
-        return <ExperienceItem experience={experience} />;
-      })}
+    <SectionLayout className={styles.experiences} leftSpace title="Experiences">
+      {sortedExperiences.map((experience) => <ExperienceItem experience={experience} key={hash(experience)} />)}
     </SectionLayout>
   );
-};
+}
 
 export default ExperiencesSection;

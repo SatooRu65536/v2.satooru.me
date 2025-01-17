@@ -1,13 +1,13 @@
-import { ReactElement } from 'react';
-import styles from './index.module.scss';
-import { ExperienceProp } from '@/components/sections/experiences';
+import type { ExperienceProp } from '@/components/sections/experiences';
+import type { ReactElement } from 'react';
 import { FadeIn } from '@/components/shares/fadein';
+import styles from './index.module.scss';
 
 interface Porps {
   experience: ExperienceProp;
 }
 
-const ExperienceItem = (props: Porps): ReactElement => {
+function ExperienceItem(props: Porps): ReactElement {
   const { experience } = props;
 
   return (
@@ -27,14 +27,14 @@ const ExperienceItem = (props: Porps): ReactElement => {
             {experience.start.format('YYYY.MM')}
             {' - '}
             {experience.end ? experience.end.format('YYYY.MM') : '現在'}
-            {experience.location && `, ${experience.location}`}
+            {experience.location !== undefined && `, ${experience.location}`}
             {', '}
           </p>
-          {experience.overview && <p className={styles.overview}>{experience.overview}</p>}
+          {experience.overview !== undefined && <p className={styles.overview}>{experience.overview}</p>}
         </div>
       </div>
     </FadeIn>
   );
-};
+}
 
 export default ExperienceItem;

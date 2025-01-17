@@ -1,31 +1,32 @@
 'use client';
 
+import type { Place } from '@/types';
+import type { ReactElement } from 'react';
 import { Marker as MapLibreMarker } from '@vis.gl/react-maplibre';
+
 import { Popup } from 'maplibre-gl';
-import { ReactElement, useState } from 'react';
+import { useState } from 'react';
 
 import styles from './index.module.scss';
-
-import { Place } from '@/types';
 
 interface Props {
   type: string;
   place: Place;
 }
 
-const getHtml = (name: string) => {
+function getHtml(name: string) {
   return `<h2>${name}</h2>`;
-};
+}
 
-const Marker = ({ place }: Props): ReactElement => {
+function Marker({ place }: Props): ReactElement {
   const { name, latitude, longitude } = place;
   const [popup] = useState(new Popup().setHTML(getHtml(name)).setOffset([0, -30]));
 
   return (
-    <MapLibreMarker longitude={longitude} latitude={latitude} anchor="center" popup={popup} className={styles.marker}>
+    <MapLibreMarker anchor="center" className={styles.marker} latitude={latitude} longitude={longitude} popup={popup}>
       <img alt="城" src="/map/castle.png" />
     </MapLibreMarker>
   );
-};
+}
 
 export default Marker;

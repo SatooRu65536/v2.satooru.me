@@ -1,21 +1,21 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 
-import Title from './title';
+import { FadeIn } from '@/components/shares/fadein';
 
 import { ABOUT } from '@/const/about';
 import SectionLayout from '@/layouts/section';
-import { FadeIn } from '@/components/shares/fadein';
+import Title from './title';
 
-const AbountSection = (): ReactElement => {
+function AbountSection(): ReactElement {
   return (
-    <SectionLayout title={<Title />} underline fadein={false}>
+    <SectionLayout fadein={false} title={<Title />} underline>
       <FadeIn direction="left">
-        {ABOUT.map((a, i) => (
-          <p key={i}>{a}</p>
+        {ABOUT.map((a) => (
+          <p key={a}>{a}</p>
         ))}
       </FadeIn>
     </SectionLayout>
   );
-};
+}
 
 export default AbountSection;

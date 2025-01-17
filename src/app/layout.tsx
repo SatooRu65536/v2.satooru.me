@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { ReactNode } from 'react';
-
+import type { ReactNode } from 'react';
 import { ABOUT } from '@/const/about';
+
+import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 
 const HOST_NAME = 'https://satooru.me';
-const SITE_NAME = "404 | SatooRu's Profile";
+const SITE_NAME = '404 | SatooRu\'s Profile';
 const KEY_WORDS = ['佐藤さとる', 'プロフィール', 'シス研', '愛知工業大学', '愛工大'];
 const DESCRIPTION = ABOUT.join('');
 

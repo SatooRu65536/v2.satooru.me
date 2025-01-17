@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 
 import styles from './index.module.scss';
 
@@ -7,12 +7,12 @@ interface Props {
   visitDate: string[];
 }
 
-const PopupElement = ({ name }: Props): ReactElement => {
+function PopupElement({ name }: Props): ReactElement {
   return (
     <div className={styles.popup}>
       <h1>{name}</h1>
     </div>
   );
-};
+}
 
 export default PopupElement;

@@ -1,10 +1,9 @@
-import { ReactElement } from 'react';
-
-import styles from './index.module.scss';
-
+import type { IconKey } from '@/components/shares/icon';
+import type { ReactElement } from 'react';
 import Fontawesome from '@/components/shares/fontawesome';
-import Icon, { IconKey } from '@/components/shares/icon';
+import Icon from '@/components/shares/icon';
 import CardLayout from '@/layouts/card';
+import styles from './index.module.scss';
 
 interface Props {
   title: string;
@@ -14,8 +13,8 @@ interface Props {
   site?: string;
 }
 
-const ProjectCard = (props: Props): ReactElement => {
-  const { title, description, techs } = props;
+function ProjectCard(props: Props): ReactElement {
+  const { title, description, techs, repository, site } = props;
 
   return (
     <CardLayout className={styles.card}>
@@ -24,24 +23,24 @@ const ProjectCard = (props: Props): ReactElement => {
       <div className={styles.tech_wrapper}>
         <div>
           {techs.map((tech) => (
-            <Icon key={tech} iconKey={tech} />
+            <Icon iconKey={tech} key={tech} />
           ))}
         </div>
       </div>
 
       <div className={styles.buttons}>
-        <a href={props.repository} target="_blank">
+        <a href={repository} target="_blank">
           <Icon iconKey="github" />
         </a>
 
-        {props.site && (
-          <a href={props.site} target="_blank">
+        {site != null && (
+          <a href={site} target="_blank">
             <Fontawesome iconKey="faWindowMaximize" />
           </a>
         )}
       </div>
     </CardLayout>
   );
-};
+}
 
 export default ProjectCard;

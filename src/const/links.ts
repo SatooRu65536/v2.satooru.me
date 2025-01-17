@@ -1,4 +1,4 @@
-import { IconKey } from '@/components/shares/icon';
+import type { IconKey } from '@/components/shares/icon';
 
 interface Link {
   link: string;

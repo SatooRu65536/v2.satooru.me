@@ -1,3 +1,3 @@
-import { Place } from "@/types";
+import type { Place } from '@/types';
 
 export const kofuns: Place[] = [];

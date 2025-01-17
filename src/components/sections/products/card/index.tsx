@@ -1,11 +1,12 @@
-import dayjs from 'dayjs';
-import { ReactElement } from 'react';
-
-import styles from './index.module.scss';
+import type { GetArticle } from '@/utils/articles';
+import type { ReactElement } from 'react';
 
 import Icon from '@/components/shares/icon';
 import CardLayout from '@/layouts/card';
-import { GetArticle, toProduct } from '@/utils/articles';
+
+import { toProduct } from '@/utils/articles';
+import dayjs from 'dayjs';
+import styles from './index.module.scss';
 
 interface Props {
   article: GetArticle;
@@ -14,7 +15,7 @@ interface Props {
 
 const defaultThumbnail = '/default/penguin.webp';
 
-const ProductCard = (props: Props): ReactElement => {
+function ProductCard(props: Props): ReactElement {
   const { article, link } = props;
   const { title, tag, techs, thumbnail, createdAt } = toProduct(article);
 
@@ -26,7 +27,7 @@ const ProductCard = (props: Props): ReactElement => {
         <div className={styles.tech_wrapper}>
           <div>
             {techs.map((tech) => (
-              <Icon key={tech} iconKey={tech} />
+              <Icon iconKey={tech} key={tech} />
             ))}
           </div>
         </div>
@@ -34,10 +35,10 @@ const ProductCard = (props: Props): ReactElement => {
       </div>
 
       <div className={styles.right}>
-        <img src={thumbnail ?? defaultThumbnail} className={styles.thumbnail} alt="" />
+        <img alt="" className={styles.thumbnail} src={thumbnail ?? defaultThumbnail} />
       </div>
     </CardLayout>
   );
-};
+}
 
 export default ProductCard;

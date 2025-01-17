@@ -1,5 +1,6 @@
+import type { FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 import { faUpRightFromSquare, faWindowMaximize } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const IconsMap = {
   faUpRightFromSquare,
@@ -12,11 +13,11 @@ interface Props extends Omit<FontAwesomeIconProps, 'icon'> {
   iconKey: AwesomeIconKey;
 }
 
-const Fontawesome = (props: Props) => {
+function Fontawesome(props: Props) {
   const { iconKey, ...rest } = props;
   const icon = IconsMap[iconKey];
 
   return <FontAwesomeIcon {...rest} icon={icon} />;
-};
+}
 
 export default Fontawesome;

@@ -1,10 +1,10 @@
-import { ReactElement } from 'react';
+import type { ReactElement } from 'react';
 
 import NotFoundPage from '@/components/pages/notfoundPage';
 import '@/styles/reset.scss';
 
-const NotFound = (): ReactElement => {
+function NotFound(): ReactElement {
   return <NotFoundPage />;
-};
+}
 
 export default NotFound;

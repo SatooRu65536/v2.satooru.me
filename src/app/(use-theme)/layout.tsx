@@ -1,17 +1,17 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { ViewTransitions } from 'next-view-transitions';
-
-import Providers from './providers';
-
 import { ABOUT } from '@/const/about';
 import PageLayout from '@/layouts/page';
+
+import { ViewTransitions } from 'next-view-transitions';
+
+import { Inter } from 'next/font/google';
+import Providers from './providers';
 import '@/styles/global.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
 const HOST_NAME = 'https://satooru.me/';
-const SITE_NAME = "SatooRu's Profile";
+const SITE_NAME = 'SatooRu\'s Profile';
 const KEY_WORDS = ['佐藤さとる', 'プロフィール', 'シス研', '愛知工業大学', '愛工大'];
 const DESCRIPTION = ABOUT.join('');
 

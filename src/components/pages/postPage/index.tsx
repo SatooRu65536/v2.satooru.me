@@ -1,17 +1,17 @@
-import dayjs from 'dayjs';
-
-import styles from './index.module.scss';
+import type { GetArticle } from '@/utils/articles';
 
 import Thumbnail from '@/components/shares/thumbnail';
+
 import ToHtml from '@/components/shares/toHtml';
-import { GetArticle } from '@/utils/articles';
+import dayjs from 'dayjs';
+import styles from './index.module.scss';
 
 interface Props {
   articles: GetArticle[];
   number: number;
 }
 
-const PostPage = (props: Props) => {
+function PostPage(props: Props) {
   const { articles, number } = props;
 
   const article = articles.find((article) => article.data.number === number);
@@ -30,6 +30,6 @@ const PostPage = (props: Props) => {
       <ToHtml className={styles.content} content={article.content} />
     </div>
   );
-};
+}
 
 export default PostPage;

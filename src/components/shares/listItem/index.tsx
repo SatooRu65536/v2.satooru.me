@@ -1,7 +1,8 @@
-import dayjs, { Dayjs } from 'dayjs';
-import { ReactElement } from 'react';
-import styles from './index.module.scss';
+import type { Dayjs } from 'dayjs';
+import type { ReactElement } from 'react';
 import Fontawesome from '@/components/shares/fontawesome';
+import dayjs from 'dayjs';
+import styles from './index.module.scss';
 
 export interface ListItemProps {
   date: Dayjs | [Dayjs] | [Dayjs, Dayjs];
@@ -14,9 +15,9 @@ export interface ListItemProps {
 
 interface Props extends ListItemProps {}
 
-const ListItem = (props: Props): ReactElement => {
+function ListItem(props: Props): ReactElement {
   const { date, type, title, link, description, dateFormat } = props;
-  const dateFormatSnap = dateFormat || 'YYYY/MM/DD';
+  const dateFormatSnap = dateFormat ?? 'YYYY/MM/DD';
 
   return (
     <li className={styles.lit_item}>
@@ -27,18 +28,22 @@ const ListItem = (props: Props): ReactElement => {
       </p>
 
       <p className={styles.main}>
-        <span>[{type}]</span>
+        <span>
+          [
+          {type}
+          ]
+        </span>
         <span className={styles.title}>{title}</span>
-        {link && (
-          <a href={link} className={styles.link}>
+        {link !== undefined && (
+          <a className={styles.link} href={link}>
             <Fontawesome className={styles.link_icon} iconKey="faUpRightFromSquare" />
           </a>
         )}
       </p>
 
-      {description && <p className={styles.description}>{description}</p>}
+      {description !== undefined && <p className={styles.description}>{description}</p>}
     </li>
   );
-};
+}
 
 export default ListItem;

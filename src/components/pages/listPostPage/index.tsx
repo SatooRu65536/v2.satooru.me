@@ -1,39 +1,39 @@
 'use client';
 
-import dayjs from 'dayjs';
-import { useSearchParams } from 'next/navigation';
-import { useCallback } from 'react';
-
-import ListPostCard from './card';
-import styles from './index.module.scss';
-
+import type { GetArticle } from '@/utils/articles';
 import PageNation from '@/components/shares/pagenation';
 import PostCategories from '@/components/shares/postCategories';
+
 import { PER_PAGE } from '@/const/setting';
-import { GetArticle } from '@/utils/articles';
+import dayjs from 'dayjs';
+
+import { useSearchParams } from 'next/navigation';
+import { useCallback } from 'react';
+import ListPostCard from './card';
+import styles from './index.module.scss';
 
 interface Props {
   articles: GetArticle[];
   category: string | undefined;
 }
 
-const ListPostPage = (props: Props) => {
+function ListPostPage(props: Props) {
   const { articles, category } = props;
 
-  const decodedCategory = category ? decodeURI(category) : category;
+  const decodedCategory = category !== undefined ? decodeURI(category) : category;
   const groupedArticles = Object.groupBy(articles, (article) => article.category);
 
   const searchParams = useSearchParams();
-  const page = parseInt(searchParams.get('p') ?? '1');
+  const page = Number.parseInt(searchParams.get('p') ?? '1');
 
-  const allArticles = decodedCategory ? groupedArticles[decodedCategory] ?? [] : articles;
+  const allArticles = decodedCategory !== undefined ? groupedArticles[decodedCategory] ?? [] : articles;
   const displayedArticles = allArticles.slice((page - 1) * PER_PAGE, page * PER_PAGE);
 
   const categoriesSet = new Set(articles.map((article) => article.category));
 
   const pageTo = useCallback(
     (n: number) => {
-      const path = decodedCategory ? `/posts/${decodedCategory}` : '/posts';
+      const path = decodedCategory !== undefined ? `/posts/${decodedCategory}` : '/posts';
       return `${path}?p=${n}`;
     },
     [decodedCategory],
@@ -49,28 +49,30 @@ const ListPostPage = (props: Props) => {
 
       <section className={styles.articles_wrapper}>
         <div className={styles.articles}>
-          {!hasArticles ? (
-            <p>記事はありません</p>
-          ) : (
-            displayedArticles.map((article) => (
-              <ListPostCard
-                key={article.data.number}
-                title={article.data.title}
-                content={article.content}
-                date={dayjs(article.postedAt)}
-                link={`/posts/${article.data.number}`}
-                thumbnail={article.thumbnail}
-              />
-            ))
-          )}
+          {!hasArticles
+            ? (
+                <p>記事はありません</p>
+              )
+            : (
+                displayedArticles.map((article) => (
+                  <ListPostCard
+                    content={article.content}
+                    date={dayjs(article.postedAt)}
+                    key={article.data.number}
+                    link={`/posts/${article.data.number}`}
+                    thumbnail={article.thumbnail}
+                    title={article.data.title}
+                  />
+                ))
+              )}
         </div>
       </section>
 
       <section className={styles.pagenation}>
-        <PageNation currentPage={page} totalArticles={allArticles.length} pageTo={pageTo} />
+        <PageNation currentPage={page} pageTo={pageTo} totalArticles={allArticles.length} />
       </section>
     </div>
   );
-};
+}
 
 export default ListPostPage;
