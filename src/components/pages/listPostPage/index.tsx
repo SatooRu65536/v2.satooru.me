@@ -1,15 +1,15 @@
 'use client';
 
 import type { GetArticle } from '@/utils/articles';
-import PageNation from '@/components/shares/pagenation';
-import PostCategories from '@/components/shares/postCategories';
+import PageNation from '@/components/shares/Pagenation';
+import PostCategories from '@/components/shares/PostCategories';
 
-import { PER_PAGE } from '@/const/setting';
+import { PER_PAGE } from '@/Const/setting';
 import dayjs from 'dayjs';
 
 import { useSearchParams } from 'next/navigation';
 import { useCallback } from 'react';
-import ListPostCard from './card';
+import ListPostCard from './Card';
 import styles from './index.module.scss';
 
 interface Props {

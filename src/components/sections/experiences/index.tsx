@@ -1,8 +1,8 @@
 import type { Dayjs } from 'dayjs';
 import type { ReactElement } from 'react';
 
-import { EXPERIENCES } from '@/const/experience';
-import SectionLayout from '@/layouts/section';
+import { EXPERIENCES } from '@/Const/experience';
+import SectionLayout from '@/layouts/Section';
 import { hash } from 'ohash';
 import styles from './index.module.scss';
 import ExperienceItem from './item';

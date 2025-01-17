@@ -1,8 +1,8 @@
 import type { ReactElement, ReactNode } from 'react';
 
-import Footer from '@/components/bases/footer';
+import Footer from '@/components/bases/Footer';
 
-import Header from '@/components/bases/header';
+import Header from '@/components/bases/Header';
 import styles from './index.module.scss';
 
 interface Props {

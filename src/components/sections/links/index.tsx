@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
-import { FadeIn, FadeInWithStagger } from '@/components/shares/fadein';
-import Icon from '@/components/shares/icon';
-import { LINKS } from '@/const/links';
+import { FadeIn, FadeInWithStagger } from '@/components/shares/Fadein';
+import Icon from '@/components/shares/Icon';
+import { LINKS } from '@/Const/links';
 import styles from './index.module.scss';
 
 function LinksSection(): ReactElement {

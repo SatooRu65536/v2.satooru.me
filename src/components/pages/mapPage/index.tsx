@@ -1,14 +1,14 @@
 import type { ReactElement } from 'react';
 
-import type { Markers } from './map';
-import Header from '@/components/bases/header';
+import type { Markers } from './Map';
+import Header from '@/components/bases/Header';
 
-import { animals } from '@/const/visit/animals';
-import { castles } from '@/const/visit/castles';
-import { kofuns } from '@/const/visit/kofuns';
-import { others } from '@/const/visit/others';
+import { animals } from '@/Const/Cisit/animals';
+import { castles } from '@/Const/Cisit/castles';
+import { kofuns } from '@/Const/Cisit/kofuns';
+import { others } from '@/Const/Cisit/others';
 import styles from './index.module.scss';
-import Map from './map';
+import Map from './Map';
 
 const markers: Markers = { castles, kofuns, animals, others };
 

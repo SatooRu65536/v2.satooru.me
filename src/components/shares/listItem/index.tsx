@@ -1,6 +1,6 @@
 import type { Dayjs } from 'dayjs';
 import type { ReactElement } from 'react';
-import Fontawesome from '@/components/shares/fontawesome';
+import Fontawesome from '@/components/shares/Fontawesome';
 import dayjs from 'dayjs';
 import styles from './index.module.scss';
 

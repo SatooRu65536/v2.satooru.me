@@ -1,6 +1,6 @@
 import type { Dayjs } from 'dayjs';
 import type { ReactElement } from 'react';
-import CardLayout from '@/layouts/card';
+import CardLayout from '@/layouts/Card';
 
 import dayjs from 'dayjs';
 

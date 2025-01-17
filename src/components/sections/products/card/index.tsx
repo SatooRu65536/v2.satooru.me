@@ -1,8 +1,8 @@
 import type { GetArticle } from '@/utils/articles';
 import type { ReactElement } from 'react';
 
-import Icon from '@/components/shares/icon';
-import CardLayout from '@/layouts/card';
+import Icon from '@/components/shares/Icon';
+import CardLayout from '@/layouts/Card';
 
 import { toProduct } from '@/utils/articles';
 import dayjs from 'dayjs';

@@ -1,10 +1,10 @@
-import type { IconKey } from '@/components/shares/icon';
+import type { IconKey } from '@/components/shares/Icon';
 import type { GrayMatterFile } from 'gray-matter';
 
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { filterIconKeys } from '@/components/shares/icon';
+import { filterIconKeys } from '@/components/shares/Icon';
 import matter from 'gray-matter';
 
 const ARTICLES_PATH = '/articles';

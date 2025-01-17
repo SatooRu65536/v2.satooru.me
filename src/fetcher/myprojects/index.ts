@@ -1,5 +1,5 @@
-import type { IconKey } from '@/components/shares/icon';
-import { IconMap } from '@/components/shares/icon';
+import type { IconKey } from '@/components/shares/Icon';
+import { IconMap } from '@/components/shares/Icon';
 
 import { getKeys } from '@/utils';
 import dayjs from 'dayjs';

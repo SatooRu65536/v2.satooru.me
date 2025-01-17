@@ -1,6 +1,6 @@
-import type { ExperienceProp } from '@/components/sections/experiences';
+import type { ExperienceProp } from '@/components/sections/Experiences';
 import type { ReactElement } from 'react';
-import { FadeIn } from '@/components/shares/fadein';
+import { FadeIn } from '@/components/shares/Fadein';
 import styles from './index.module.scss';
 
 interface Porps {

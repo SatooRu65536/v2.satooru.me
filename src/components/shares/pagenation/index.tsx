@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import { PER_PAGE } from '@/const/setting';
+import { PER_PAGE } from '@/Const/setting';
 
 import { Link } from 'next-view-transitions';
 

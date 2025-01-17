@@ -1,9 +1,9 @@
 import type { ReactElement } from 'react';
 
-import { FadeIn } from '@/components/shares/fadein';
+import { FadeIn } from '@/components/shares/Fadein';
 
-import { ABOUT } from '@/const/about';
-import SectionLayout from '@/layouts/section';
+import { ABOUT } from '@/Const/about';
+import SectionLayout from '@/layouts/Section';
 import Title from './title';
 
 function AbountSection(): ReactElement {

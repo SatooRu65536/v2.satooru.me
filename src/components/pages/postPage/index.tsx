@@ -1,8 +1,8 @@
 import type { GetArticle } from '@/utils/articles';
 
-import Thumbnail from '@/components/shares/thumbnail';
+import Thumbnail from '@/components/shares/Thumbnail';
 
-import ToHtml from '@/components/shares/toHtml';
+import ToHtml from '@/components/shares/ToHtml';
 import dayjs from 'dayjs';
 import styles from './index.module.scss';
 

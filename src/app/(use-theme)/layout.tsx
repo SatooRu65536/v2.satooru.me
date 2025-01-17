@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import { ABOUT } from '@/const/about';
-import PageLayout from '@/layouts/page';
+import { ABOUT } from '@/Const/about';
+import PageLayout from '@/layouts/Page';
 
 import { ViewTransitions } from 'next-view-transitions';
 

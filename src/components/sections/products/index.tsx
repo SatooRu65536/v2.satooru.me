@@ -1,8 +1,8 @@
 import type { GetArticle } from '@/utils/articles';
 import type { ReactElement } from 'react';
-import { FadeIn, FadeInWithStagger } from '@/components/shares/fadein';
-import SectionLayout from '@/layouts/section';
-import ProductCard from './card';
+import { FadeIn, FadeInWithStagger } from '@/components/shares/Fadein';
+import SectionLayout from '@/layouts/Section';
+import ProductCard from './Card';
 import styles from './index.module.scss';
 
 interface Props {

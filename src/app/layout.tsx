@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import { ABOUT } from '@/const/about';
+import { ABOUT } from '@/Const/about';
 
 import { Inter } from 'next/font/google';
 

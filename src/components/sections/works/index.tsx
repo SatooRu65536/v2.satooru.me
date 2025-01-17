@@ -1,8 +1,8 @@
 import type { ReactElement } from 'react';
-import { FadeIn, FadeInWithStagger } from '@/components/shares/fadein';
+import { FadeIn, FadeInWithStagger } from '@/components/shares/Fadein';
 import ListItem from '@/components/shares/listItem';
-import { WORKS } from '@/const/works';
-import SectionLayout from '@/layouts/section';
+import { WORKS } from '@/Const/works';
+import SectionLayout from '@/layouts/Section';
 import { hash } from 'ohash';
 import styles from './index.module.scss';
 

@@ -1,9 +1,9 @@
 import type { GetArticle } from '@/utils/articles';
 import type { ReactElement } from 'react';
-import { FadeIn, FadeInWithStagger } from '@/components/shares/fadein';
-import SectionLayout from '@/layouts/section';
+import { FadeIn, FadeInWithStagger } from '@/components/shares/Fadein';
+import SectionLayout from '@/layouts/Section';
 import dayjs from 'dayjs';
-import PostCard from './card';
+import PostCard from './Card';
 import styles from './index.module.scss';
 
 interface Props {

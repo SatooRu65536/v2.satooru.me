@@ -1,8 +1,8 @@
-import type { IconKey } from '@/components/shares/icon';
+import type { IconKey } from '@/components/shares/Icon';
 import type { ReactElement } from 'react';
-import Fontawesome from '@/components/shares/fontawesome';
-import Icon from '@/components/shares/icon';
-import CardLayout from '@/layouts/card';
+import Fontawesome from '@/components/shares/Fontawesome';
+import Icon from '@/components/shares/Icon';
+import CardLayout from '@/layouts/Card';
 import styles from './index.module.scss';
 
 interface Props {

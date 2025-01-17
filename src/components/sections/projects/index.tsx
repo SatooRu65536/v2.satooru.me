@@ -1,14 +1,14 @@
 'use client';
 
 import type { ReactElement } from 'react';
-import { FadeIn, FadeInWithStagger } from '@/components/shares/fadein';
+import { FadeIn, FadeInWithStagger } from '@/components/shares/Fadein';
 
-import Loading from '@/components/shares/loading';
-import SectionLayout from '@/layouts/section';
+import Loading from '@/components/shares/Loading';
+import SectionLayout from '@/layouts/Section';
 
 import { projectsAtomLoadable } from '@/store/projectsAtom';
 import { useAtomValue } from 'jotai';
-import ProjectCard from './card';
+import ProjectCard from './Card';
 import styles from './index.module.scss';
 
 function ProjectsSection(): ReactElement {

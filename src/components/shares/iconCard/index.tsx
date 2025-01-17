@@ -1,7 +1,7 @@
-import type { IconKey } from '@/components/shares/icon';
+import type { IconKey } from '@/components/shares/Icon';
 import type { ReactElement } from 'react';
 
-import Icon, { IconMap } from '@/components/shares/icon';
+import Icon, { IconMap } from '@/components/shares/Icon';
 
 import styles from './index.module.scss';
 

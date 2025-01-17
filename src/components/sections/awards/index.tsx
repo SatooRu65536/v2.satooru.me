@@ -1,8 +1,8 @@
 import type { ReactElement } from 'react';
-import { FadeIn } from '@/components/shares/fadein';
+import { FadeIn } from '@/components/shares/Fadein';
 import ListItem from '@/components/shares/listItem';
-import { AWARD } from '@/const/awards';
-import SectionLayout from '@/layouts/section';
+import { AWARD } from '@/Const/awards';
+import SectionLayout from '@/layouts/Section';
 import styles from './index.module.scss';
 
 function AwardsSection(): ReactElement {

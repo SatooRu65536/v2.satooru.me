@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 
-import NotFoundPage from '@/components/pages/notfoundPage';
+import NotFoundPage from '@/components/pages/NotfoundPage';
 import '@/styles/reset.scss';
 
 function NotFound(): ReactElement {

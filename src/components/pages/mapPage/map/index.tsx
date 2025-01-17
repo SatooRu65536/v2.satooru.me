@@ -7,7 +7,7 @@ import { Map as MapLibre } from '@vis.gl/react-maplibre';
 import * as React from 'react';
 import { useCallback } from 'react';
 import styles from './index.module.scss';
-import Marker from './marker';
+import Marker from './Marker';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
 export type Markers = Record<string, Place[]>;
