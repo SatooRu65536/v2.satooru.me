@@ -1,11 +1,10 @@
-import { ReactElement } from 'react';
-
+import { ReactElement } from 'react'
 import styles from './index.module.scss';
-
 import ListItem from '@/components/shares/listItem';
 import { WORKS } from '@/const/works';
 import SectionLayout from '@/layouts/section';
 import { FadeIn, FadeInWithStagger } from '@/components/shares/fadein';
+import { hash } from 'ohash';
 
 const WorksSection = (): ReactElement => {
   return (
@@ -13,7 +12,7 @@ const WorksSection = (): ReactElement => {
       <FadeInWithStagger>
         <ul className={styles.works}>
           {WORKS.map((work) => (
-            <FadeIn key={work.title} direction='left'>
+            <FadeIn key={hash(work)} direction="left">
               <ListItem {...work} />
             </FadeIn>
           ))}

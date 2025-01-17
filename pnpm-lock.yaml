@@ -44,6 +44,9 @@ importers:
       next-view-transitions:
         specifier: ^0.1.1
         version: 0.1.1(next@14.1.4(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.83.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      ohash:
+        specifier: ^1.1.4
+        version: 1.1.4
       react:
         specifier: ^18
         version: 18.3.1
@@ -3912,6 +3915,9 @@ packages:
 
   objectorarray@1.0.5:
     resolution: {integrity: sha512-eJJDYkhJFFbBBAxeh8xW+weHlkI28n2ZdQV/J/DNfWfSKlGEf2xcfAbZTv3riEXHAhL9SVOTs2pRmXiSTf78xg==}
+
+  ohash@1.1.4:
+    resolution: {integrity: sha512-FlDryZAahJmEF3VR3w1KogSEdWX3WhA5GPakFx4J81kEAiHyLMpdLLElS8n8dfNadMgAne/MywcvmogzscVt4g==}
 
   once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
@@ -9755,6 +9761,8 @@ snapshots:
       es-object-atoms: 1.0.0
 
   objectorarray@1.0.5: {}
+
+  ohash@1.1.4: {}
 
   once@1.4.0:
     dependencies:
