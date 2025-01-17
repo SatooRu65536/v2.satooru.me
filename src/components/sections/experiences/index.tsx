@@ -3,7 +3,6 @@ import { ReactElement } from 'react';
 
 import styles from './index.module.scss';
 import ExperienceItem from './item';
-
 import { EXPERIENCES } from '@/const/experience';
 import SectionLayout from '@/layouts/section';
 
@@ -24,7 +23,7 @@ const ExperiencesSection = (): ReactElement => {
   return (
     <SectionLayout title="Experiences" className={styles.experiences} leftSpace>
       {sortedExperiences.map((experience) => {
-        return <ExperienceItem key={experience.description} experience={experience} />;
+        return <ExperienceItem experience={experience} />;
       })}
     </SectionLayout>
   );

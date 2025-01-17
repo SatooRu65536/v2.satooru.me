@@ -1,8 +1,7 @@
 import { ReactElement } from 'react';
-
 import styles from './index.module.scss';
-
 import { ExperienceProp } from '@/components/sections/experiences';
+import { FadeIn } from '@/components/shares/fadein';
 
 interface Porps {
   experience: ExperienceProp;
@@ -12,7 +11,7 @@ const ExperienceItem = (props: Porps): ReactElement => {
   const { experience } = props;
 
   return (
-    <div className={styles.card} key={experience.description}>
+    <FadeIn className={styles.card}>
       <div className={styles.circle_container}>
         <div className={styles.circle} data-fill={experience.fill} />
         <div className={styles.line} />
@@ -34,7 +33,7 @@ const ExperienceItem = (props: Porps): ReactElement => {
           {experience.overview && <p className={styles.overview}>{experience.overview}</p>}
         </div>
       </div>
-    </div>
+    </FadeIn>
   );
 };
 

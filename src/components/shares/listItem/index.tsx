@@ -1,8 +1,6 @@
 import dayjs, { Dayjs } from 'dayjs';
 import { ReactElement } from 'react';
-
 import styles from './index.module.scss';
-
 import Fontawesome from '@/components/shares/fontawesome';
 
 export interface ListItemProps {
