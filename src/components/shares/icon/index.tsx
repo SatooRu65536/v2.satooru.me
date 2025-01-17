@@ -26,6 +26,7 @@ import {
   SiRaspberrypi,
   SiReact,
   SiRecoil,
+  SiRemix,
   SiRubyonrails,
   SiSass,
   SiStorybook,
@@ -51,6 +52,7 @@ import {
   SiFastapi,
   SiTrpc,
 } from '@icons-pack/react-simple-icons';
+import { removeListener } from 'process';
 import { ReactElement } from 'react';
 
 export const IconMap = {
@@ -92,6 +94,7 @@ export const IconMap = {
   prettier: { name: 'Prettier', icon: SiPrettier },
   raspberrypi: { name: 'Raspberry Pi', icon: SiRaspberrypi },
   react: { name: 'React', icon: SiReact },
+  remix: { name: 'Remix', icon: SiRemix },
   rails: { name: 'Ruby on Rails', icon: SiRubyonrails },
   recoil: { name: 'Recoil', icon: SiRecoil },
   scss: { name: 'SCSS', icon: SiSass },
