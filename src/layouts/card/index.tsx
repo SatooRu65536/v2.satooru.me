@@ -4,7 +4,6 @@ import { Link } from 'next-view-transitions';
 import styles from './index.module.scss';
 
 interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> {
-  children: ReactElement | ReactElement[];
   link?: string;
 }
 

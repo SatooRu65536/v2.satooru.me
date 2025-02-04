@@ -2,6 +2,7 @@ import type { ReactElement } from 'react';
 import {
   SiAdobeaftereffects,
   SiAdobeillustrator,
+  SiAstro,
   SiBiome,
   SiC,
   SiCloudflare,
@@ -48,14 +49,16 @@ import {
   SiThreedotjs,
   SiTrpc,
   SiTypescript,
+  SiUnjs,
   SiVite,
-  // SiPlaywright,
   SiVitest,
+  SiVuedotjs,
   SiX,
 } from '@icons-pack/react-simple-icons';
 
 export const IconMap = {
   'aftereffects': { name: 'After Effects', icon: SiAdobeaftereffects },
+  'astro': { name: 'Astro', icon: SiAstro },
   'biome': { name: 'Biome', icon: SiBiome },
   'c': { name: 'C言語', icon: SiC },
   'cloudflare': { name: 'Cloudflare', icon: SiCloudflare },
@@ -86,7 +89,6 @@ export const IconMap = {
   'nextjs': { name: 'Next.js', icon: SiNextdotjs },
   'node': { name: 'Node.js', icon: SiNodedotjs },
   'pandas': { name: 'Pandas', icon: SiPandas },
-  // playwright: { name: 'Playwright', icon: SiPlaywright },
   'prisma': { name: 'Prisma', icon: SiPrisma },
   'python': { name: 'Python', icon: SiPython },
   'python3': { name: 'Python', icon: SiPython },
@@ -105,8 +107,10 @@ export const IconMap = {
   'threejs': { name: 'Three.js', icon: SiThreedotjs },
   'typescript': { name: 'TypeScript', icon: SiTypescript },
   'trpc': { name: 'trpc', icon: SiTrpc },
+  'unjs': { name: 'Un.js', icon: SiUnjs },
   'vite': { name: 'Vite', icon: SiVite },
   'vitest': { name: 'Vitest', icon: SiVitest },
+  'vue': { name: 'Vue.js', icon: SiVuedotjs },
   'x': { name: 'X', icon: SiX },
 } as const;
 

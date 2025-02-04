@@ -3,10 +3,10 @@ import type { ReactElement } from 'react';
 import type { Markers } from './Map';
 import Header from '@/components/bases/Header';
 
-import { animals } from '@/Const/Cisit/animals';
-import { castles } from '@/Const/Cisit/castles';
-import { kofuns } from '@/Const/Cisit/kofuns';
-import { others } from '@/Const/Cisit/others';
+import { animals } from '@/const/Cisit/animals';
+import { castles } from '@/const/Cisit/castles';
+import { kofuns } from '@/const/Cisit/kofuns';
+import { others } from '@/const/Cisit/others';
 import styles from './index.module.scss';
 import Map from './Map';
 
