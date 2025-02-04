@@ -3,8 +3,8 @@ import type { ReactElement } from 'react';
 import { FadeIn } from '@/components/shares/Fadein';
 
 import { ABOUT } from '@/const/about';
-import SectionLayout from '@/layouts/Section';
-import Title from './Title/index';
+import SectionLayout from '@/layouts/section';
+import Title from './title/index';
 
 function AbountSection(): ReactElement {
   return (

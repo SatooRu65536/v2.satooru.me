@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import ListPostPage from '@/components/pages/ListPostPage';
+import ListPostPage from '@/components/pages/listPostPage';
 
 import Loading from '@/components/shares/Loading';
 import { articles } from '@/utils/articles';

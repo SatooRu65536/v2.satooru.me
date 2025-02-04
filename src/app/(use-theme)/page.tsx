@@ -1,12 +1,12 @@
-import AbountSection from '@/components/sections/About';
-import AwardsSection from '@/components/sections/Awards';
-import ExperiencesSection from '@/components/sections/Experiences';
-import LinksSection from '@/components/sections/Links';
-import RecentPostsSection from '@/components/sections/Posts';
-import ProductsSection from '@/components/sections/Products';
-import ProjectsSection from '@/components/sections/Projects';
-import SkillsSection from '@/components/sections/Skills';
-import WorksSection from '@/components/sections/Works';
+import AbountSection from '@/components/sections/about';
+import AwardsSection from '@/components/sections/awards';
+import ExperiencesSection from '@/components/sections/experiences';
+import LinksSection from '@/components/sections/links';
+import RecentPostsSection from '@/components/sections/posts';
+import ProductsSection from '@/components/sections/products';
+import ProjectsSection from '@/components/sections/projects';
+import SkillsSection from '@/components/sections/skills';
+import WorksSection from '@/components/sections/works';
 import { articles, products } from '@/utils/articles';
 
 export default function Page() {

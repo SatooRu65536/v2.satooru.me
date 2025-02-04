@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
-import ListPostPage from '@/components/pages/ListPostPage';
+import ListPostPage from '@/components/pages/listPostPage';
 
-import PostPage from '@/components/pages/PostPage';
+import PostPage from '@/components/pages/postPage';
 import Loading from '@/components/shares/Loading';
 import { articles } from '@/utils/articles';
 import { Suspense } from 'react';
