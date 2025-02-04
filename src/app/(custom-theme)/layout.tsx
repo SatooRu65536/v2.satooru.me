@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ABOUT } from '@/Const/about';
+import { ABOUT } from '@/const/about';
 import { ViewTransitions } from 'next-view-transitions';
 
 import { Inter } from 'next/font/google';
